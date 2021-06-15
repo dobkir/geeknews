@@ -1,127 +1,253 @@
-let preprocessor = 'sass', // Preprocessor (sass, less, styl); 'sass' also work with the Scss syntax in blocks/ folder.
-		fileswatch   = 'html,htm,txt,json,md,woff2' // List of files extensions for watching & hard reload
+"use strict";
 
-const { src, dest, parallel, series, watch } = require('gulp')
-const browserSync  = require('browser-sync').create()
-const bssi         = require('browsersync-ssi')
-const ssi          = require('ssi')
-const webpack      = require('webpack-stream')
-const sass         = require('gulp-sass')
-const sassglob     = require('gulp-sass-glob')
-const less         = require('gulp-less')
-const lessglob     = require('gulp-less-glob')
-const styl         = require('gulp-stylus')
-const stylglob     = require("gulp-empty")
-const cleancss     = require('gulp-clean-css')
-const autoprefixer = require('gulp-autoprefixer')
-const rename       = require('gulp-rename')
-const imagemin     = require('gulp-imagemin')
-const newer        = require('gulp-newer')
-const rsync        = require('gulp-rsync')
-const del          = require('del')
+const {src, dest} = require("gulp");
+const gulp = require("gulp");
+const autoprefixer = require("gulp-autoprefixer");
+const cssbeautify = require("gulp-cssbeautify");
+const removeComments = require('gulp-strip-css-comments');
+const rename = require("gulp-rename");
+const sass = require("gulp-sass");
+const cssnano = require("gulp-cssnano");
+const uglify = require("gulp-uglify");
+const plumber = require("gulp-plumber");
+const panini = require("panini");
+const imagemin = require("gulp-imagemin");
+const del = require("del");
+const notify = require("gulp-notify");
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const browserSync = require("browser-sync").create();
 
-function browsersync() {
-	browserSync.init({
-		server: {
-			baseDir: 'app/',
-			middleware: bssi({ baseDir: 'app/', ext: '.html' })
-		},
-		// tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt
-		notify: false,
-		online: true
-	})
+
+/* Paths */
+const srcPath = 'src/';
+const distPath = 'dist/';
+
+const path = {
+    build: {
+        html:   distPath,
+        js:     distPath + "assets/js/",
+        css:    distPath + "assets/css/",
+        images: distPath + "assets/images/",
+        fonts:  distPath + "assets/fonts/"
+    },
+    src: {
+        html:   srcPath + "*.html",
+        js:     srcPath + "assets/js/*.js",
+        css:    srcPath + "assets/scss/*.scss",
+        images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+    },
+    watch: {
+        html:   srcPath + "**/*.html",
+        js:     srcPath + "assets/js/**/*.js",
+        css:    srcPath + "assets/scss/**/*.scss",
+        images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+    },
+    clean: "./" + distPath
 }
 
-function scripts() {
-	return src(['app/js/*.js', '!app/js/*.min.js'])
-		.pipe(webpack({
-			mode: 'production',
-			module: {
-				rules: [
-					{
-						test: /\.(js)$/,
-						exclude: /(node_modules)/,
-						loader: 'babel-loader',
-						query: {
-							presets: ['@babel/env'],
-							plugins: ['babel-plugin-root-import']
-						}
-					}
-				]
-			}
-		})).on('error', function handleError() {
-			this.emit('end')
-		})
-		.pipe(rename('app.min.js'))
-		.pipe(dest('app/js'))
-		.pipe(browserSync.stream())
+
+
+/* Tasks */
+
+function serve() {
+    browserSync.init({
+        server: {
+            baseDir: "./" + distPath
+        }
+    });
 }
 
-function styles() {
-	return src([`app/styles/${preprocessor}/*.*`, `!app/styles/${preprocessor}/_*.*`])
-		.pipe(eval(`${preprocessor}glob`)())
-		.pipe(eval(preprocessor)())
-		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
-		.pipe(cleancss({ level: { 1: { specialComments: 0 } },/* format: 'beautify' */ }))
-		.pipe(rename({ suffix: ".min" }))
-		.pipe(dest('app/css'))
-		.pipe(browserSync.stream())
+function html(cb) {
+    panini.refresh();
+    return src(path.src.html, {base: srcPath})
+        .pipe(plumber())
+        .pipe(panini({
+            root:       srcPath,
+            layouts:    srcPath + 'layouts/',
+            partials:   srcPath + 'partials/',
+            helpers:    srcPath + 'helpers/',
+            data:       srcPath + 'data/'
+        }))
+        .pipe(dest(path.build.html))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
 }
 
-function images() {
-	return src(['app/images/src/**/*'])
-		.pipe(newer('app/images/dist'))
-		.pipe(imagemin())
-		.pipe(dest('app/images/dist'))
-		.pipe(browserSync.stream())
+function css(cb) {
+    return src(path.src.css, {base: srcPath + "assets/scss/"})
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title:    "SCSS Error",
+                    message:  "Error: <%= error.message %>"
+                })(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sass({
+            includePaths: './node_modules/'
+        }))
+        .pipe(autoprefixer({
+            cascade: true
+        }))
+        .pipe(cssbeautify())
+        .pipe(dest(path.build.css))
+        .pipe(cssnano({
+            zindex: false,
+            discardComments: {
+                removeAll: true
+            }
+        }))
+        .pipe(removeComments())
+        .pipe(rename({
+            suffix: ".min",
+            extname: ".css"
+        }))
+        .pipe(dest(path.build.css))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
 }
 
-function buildcopy() {
-	return src([
-		'{app/js,app/css}/*.min.*',
-		'app/images/**/*.*',
-		'!app/images/src/**/*',
-		'app/fonts/**/*'
-	], { base: 'app/' })
-	.pipe(dest('dist'))
+function cssWatch(cb) {
+    return src(path.src.css, {base: srcPath + "assets/scss/"})
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title:    "SCSS Error",
+                    message:  "Error: <%= error.message %>"
+                })(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sass({
+            includePaths: './node_modules/'
+        }))
+        .pipe(rename({
+            suffix: ".min",
+            extname: ".css"
+        }))
+        .pipe(dest(path.build.css))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
 }
 
-async function buildhtml() {
-	let includes = new ssi('app/', 'dist/', '/**/*.html')
-	includes.compile()
-	del('dist/parts', { force: true })
+function js(cb) {
+    return src(path.src.js, {base: srcPath + 'assets/js/'})
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title:    "JS Error",
+                    message:  "Error: <%= error.message %>"
+                })(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(webpackStream({
+          mode: "production",
+          output: {
+            filename: 'app.js',
+          },
+          module: {
+            rules: [
+              {
+                test: /\.(js)$/,
+                exclude: /(node_modules)/,
+                loader: 'babel-loader',
+                query: {
+                  presets: ['@babel/preset-env']
+                }
+              }
+            ]
+          }
+        }))
+        .pipe(dest(path.build.js))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
 }
 
-function cleandist() {
-	return del('dist/**/*', { force: true })
+function jsWatch(cb) {
+    return src(path.src.js, {base: srcPath + 'assets/js/'})
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title:    "JS Error",
+                    message:  "Error: <%= error.message %>"
+                })(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(webpackStream({
+          mode: "development",
+          output: {
+            filename: 'app.js',
+          }
+        }))
+        .pipe(dest(path.build.js))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
 }
 
-function deploy() {
-	return src('dist/')
-		.pipe(rsync({
-			root: 'dist/',
-			hostname: 'username@yousite.com',
-			destination: 'yousite/public_html/',
-			include: [/* '*.htaccess' */], // Included files to deploy,
-			exclude: [ '**/Thumbs.db', '**/*.DS_Store' ],
-			recursive: true,
-			archive: true,
-			silent: false,
-			compress: true
-		}))
+function images(cb) {
+    return src(path.src.images)
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.mozjpeg({quality: 95, progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
+                ]
+            })
+        ]))
+        .pipe(dest(path.build.images))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
 }
 
-function startwatch() {
-	watch(`app/styles/${preprocessor}/**/*`, { usePolling: true }, styles)
-	watch(['app/js/**/*.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
-	watch('app/images/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
-	watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
+function fonts(cb) {
+    return src(path.src.fonts)
+        .pipe(dest(path.build.fonts))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
 }
 
-exports.scripts = scripts
-exports.styles  = styles
-exports.images  = images
-exports.deploy  = deploy
-exports.assets  = series(scripts, styles, images)
-exports.build   = series(cleandist, scripts, styles, images, buildcopy, buildhtml)
-exports.default = series(scripts, styles, images, parallel(browsersync, startwatch))
+function clean(cb) {
+    return del(path.clean);
+
+    cb();
+}
+
+function watchFiles() {
+    gulp.watch([path.watch.html], html);
+    gulp.watch([path.watch.css], cssWatch);
+    gulp.watch([path.watch.js], jsWatch);
+    gulp.watch([path.watch.images], images);
+    gulp.watch([path.watch.fonts], fonts);
+}
+
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+const watch = gulp.parallel(build, watchFiles, serve);
+
+
+
+/* Exports Tasks */
+exports.html = html;
+exports.css = css;
+exports.js = js;
+exports.images = images;
+exports.fonts = fonts;
+exports.clean = clean;
+exports.build = build;
+exports.watch = watch;
+exports.default = watch;
