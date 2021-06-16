@@ -48,6 +48,15 @@ $fa-font-path: "../fonts/fontawesome";
   }
 }
 
+.cross {
+  @extend %fa-icon;
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-times);
+  }
+}
+
 .search {
   @extend %fa-icon;
   @extend .fas;

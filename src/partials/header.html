@@ -1,5 +1,6 @@
-<div class="btn menu__mobile--button" title="Мобильное меню" id="menu">
-  <i class="bars" aria-hidden="true"></i>
+<div class="menu__mobile--button" title="Мобильное меню" id="menu">
+  <i class="bars hidden" aria-hidden="true" id="menu-icon"></i>
+  <i class="cross" aria-hidden="true" id="menu-icon"></i>
   Меню
 </div>
 
@@ -27,12 +28,12 @@
     </li>
   </ul>
 </nav>
-<div class="btn search__icon" title="Поик по сайту" id="search__field">
+<div class="search__icon" title="Поик по сайту" id="search">
   <i class="search" aria-hidden="true"></i>
-  Поиск
+
 </div>
 
-<form class="search__field hidden" action="/search.html" id="search__field">
+<form class="search__field hidden" action="/search.html" id="search">
   <!-- on value field must be master public key -->
   <input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
   <input type="hidden" name="cof" value="FORID:10" />
