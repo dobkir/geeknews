@@ -5,6 +5,7 @@
 .fa,
 .fas,
 .bars,
+.cross,
 .search,
 .far,
 .fal,
@@ -19,7 +20,7 @@
     line-height: 1;
 }
 
-.bars, .search {
+.bars, .cross, .search {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: inline-block;
@@ -123,6 +124,7 @@
 .fa.fa-pull-left,
 .fas.fa-pull-left,
 .fa-pull-left.bars,
+.fa-pull-left.cross,
 .fa-pull-left.search,
 .far.fa-pull-left,
 .fal.fa-pull-left,
@@ -133,6 +135,7 @@
 .fa.fa-pull-right,
 .fas.fa-pull-right,
 .fa-pull-right.bars,
+.fa-pull-right.cross,
 .fa-pull-right.search,
 .far.fa-pull-right,
 .fal.fa-pull-right,
@@ -6123,6 +6126,7 @@ readers do not read off random characters that represent icons */
 .fa,
 .fas,
 .bars,
+.cross,
 .search {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
@@ -6131,6 +6135,7 @@ readers do not read off random characters that represent icons */
 .fa,
 .fas,
 .bars,
+.cross,
 .search,
 .far,
 .fal,
@@ -6140,6 +6145,10 @@ readers do not read off random characters that represent icons */
 
 .bars:before {
     content: "\f0c9";
+}
+
+.cross:before {
+    content: "\f00d";
 }
 
 .search:before {
@@ -6657,10 +6666,6 @@ a:hover {
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
-}
-
-.menu__mobile--button:hover, .menu__mobile--button:focus {
-    color: #ec1c1c;
 }
 
 @media screen and (max-width: 991px) {
