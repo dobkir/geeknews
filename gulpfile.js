@@ -254,6 +254,7 @@ exports.js = js;
 exports.images = images;
 exports.fonts = fonts;
 exports.clean = clean;
+exports.deploy = deploy;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
