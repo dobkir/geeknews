@@ -1,0 +1,40 @@
+.logo {
+  display: inline-block;
+
+  font-family: baron_neue_bold, sans-serif;
+  font-size: 1.27rem;
+  color: $white;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $accent;
+  }
+
+  @media screen and (max-width: 374px) {
+    font-size: 1rem;
+  }
+}
+
+.logo__header {
+  padding-left: 1.67rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 3.61rem;
+
+  @media screen and (max-width: 374px) {
+    padding-left: .5rem;
+  }
+}
+
+.logo--litera {
+  color: $accent;
+}
+
+.logo__footer {
+  font-size: inherit;
+  color: inherit;
+}

@@ -1,0 +1,39 @@
+.footer {
+  height: $footer-height;
+  background-color: $dark-blue;
+
+  @media screen and (max-width: 991px) {
+    height: calc(var(--footer-height) / 2);
+  }
+}
+
+.footer__bottom {
+  margin-top: 2.4rem;
+  padding: 2.5rem 0 0;
+
+  font-size: .72rem;
+  text-align: center;
+
+  border-top: .5px solid rgba($white, .2);
+
+  @media screen and (max-width: 991px) {
+    margin-top: 1.7rem;
+    padding: 1.75rem 0 0;
+  }
+}
+
+.copy__rights {
+  font-family: baron-g, sans-serif;
+  font-weight: 900;
+  color: rgba($white, .45);
+
+  &--message {
+    margin: 1rem;
+
+    color: rgba($white, .2);
+
+    @media screen and (max-width: 991px) {
+      margin: .5rem;
+    }
+  }
+}

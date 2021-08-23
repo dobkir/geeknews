@@ -1,8 +1,8 @@
 {
-    "name": "brainscloud",
+    "name": "geektop",
     "version": "1.0.0",
-    "description": "brainscloud",
-    "author": "brainscloud",
+    "description": "The world of science and technology news website",
+    "author": "Pavel Kirillov",
     "devDependencies": {
         "@babel/core": "^7.12.3",
         "@babel/preset-env": "^7.12.1",

@@ -1,0 +1,151 @@
+.menu__mobile--button {
+  display: none;
+  text-align: center;
+  font-size: 1.27rem;
+  font-weight: bold;
+  line-height: 3.61rem;
+  letter-spacing: .1rem;
+  color: $white;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+
+  @media screen and (max-width: 991px) {
+    display: block;
+
+    font-size: 1.1rem;
+  }
+}
+
+.menu__main {
+  display: block;
+  padding: 0 5.56rem;
+  width: 100%;
+  text-align: center;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: -4px;
+
+    a {
+      display: block;
+      padding: 0 1.1rem;
+      font-size: .89rem;
+      font-weight: 900;
+      letter-spacing: .06rem;
+      color: #d1d9e0;
+      text-decoration: none;
+      text-transform: uppercase;
+      line-height: 3.61rem;
+      transition: color .25s ease, background-color .25 ease;
+
+      &:hover,
+      &:focus {
+        color: $white;
+        background-color: lighten($dark, 8%);
+      }
+
+      &.active {
+        color: $white;
+        background-color: lighten($dark, 5%);
+      }
+
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    background-color: lighten($dark, 3%);
+    border-top: 1px solid lighten($dark, 5%);
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      li {
+        display: block;
+        width: 100vw;
+
+        a {
+          padding: 0;
+          line-height: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+.menu__footer {
+  padding-top: 2.25rem;
+
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+.menu__social {
+  height: 3.06rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1.11rem auto;
+
+  color: aliceblue;
+
+  &--link {
+    height: 3.06rem;
+    width: 3.06rem;
+    display: block;
+    margin: auto .45rem;
+
+    font-size: 1.33rem;
+    text-align: center;
+    line-height: 3.06rem;
+    color: $white;
+
+    border-radius: 50%;
+    border: 1px solid rgba($white, .1);
+
+    transition: border-color .25s ease, opacity .25s ease;
+
+    @media screen and (max-width: 374px) {
+      height: 2.295rem;
+      width: 2.295rem;
+
+      font-size: 1rem;
+      line-height: 2.295rem;
+    }
+
+    &:hover {
+      border-color: rgba(#fff, .35);
+
+      .fa {
+        transition: opacity .25s ease;
+        opacity: 0.75;
+
+        .fa {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    padding-top: 1rem;
+  }
+}
+
+.nav__bar {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

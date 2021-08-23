@@ -22,14 +22,19 @@ sans-serif,
 "Segoe UI Symbol",
 "Noto Color Emoji"; // System Font Family
 
+// SIZES
+$header-height: 3.61rem;
+$footer-height: 19.44rem;
+$main-heigh: calc(100vh - #{$header-height} - #{$footer-height});
+
 // FONTAWESOME LOAD SECTION
 
 $fa-font-path: "../fonts/fontawesome";
 @import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-// @import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
-// @import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
 @import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
-// @import "../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
 
 .fa,
 .fas,
