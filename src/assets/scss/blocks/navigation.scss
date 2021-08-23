@@ -122,7 +122,8 @@
       line-height: 2.295rem;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       border-color: rgba(#fff, .35);
 
       .fa {
