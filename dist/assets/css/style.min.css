@@ -7348,12 +7348,12 @@ a {
         width: 2.295rem;
         font-size: 1rem;
         line-height: 2.295rem; } }
-    .menu__social--link:hover {
+    .menu__social--link:hover, .menu__social--link:focus {
       border-color: rgba(255, 255, 255, 0.35); }
-      .menu__social--link:hover .fa {
+      .menu__social--link:hover .fa, .menu__social--link:focus .fa {
         transition: opacity .25s ease;
         opacity: 0.75; }
-        .menu__social--link:hover .fa .fa {
+        .menu__social--link:hover .fa .fa, .menu__social--link:focus .fa .fa {
           opacity: 1; }
   @media screen and (max-width: 991px) {
     .menu__social {
