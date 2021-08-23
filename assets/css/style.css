@@ -9622,16 +9622,16 @@ a:hover {
     }
 }
 
-.menu__social--link:hover {
+.menu__social--link:hover, .menu__social--link:focus {
     border-color: rgba(255, 255, 255, 0.35);
 }
 
-.menu__social--link:hover .fa {
+.menu__social--link:hover .fa, .menu__social--link:focus .fa {
     transition: opacity .25s ease;
     opacity: 0.75;
 }
 
-.menu__social--link:hover .fa .fa {
+.menu__social--link:hover .fa .fa, .menu__social--link:focus .fa .fa {
     opacity: 1;
 }
 
@@ -9734,7 +9734,7 @@ a:hover {
 }
 
 .main {
-    height: 30vh;
+    height: calc(100vh - 3.61rem - 19.44rem);
     font-size: 3rem;
     font-weight: 900;
     text-align: center;
@@ -9747,7 +9747,7 @@ a:hover {
 
 @media screen and (max-width: 991px) {
     .footer {
-        height: 9.72rem;
+        height: calc(var(--footer-height) / 2);
     }
 }
 
