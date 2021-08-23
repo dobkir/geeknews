@@ -21,15 +21,15 @@
 <body>
 
     <header class="header">
-        <div class="menu__mobile--button" title="Мобильное меню" id="menu">
-          <i class="bars hidden" aria-hidden="true" id="menu-icon"></i>
-          <i class="cross" aria-hidden="true" id="menu-icon"></i>
+        <div class="menu__mobile--button" title="Мобильное меню" id="menu__mobile">
+          <i class="bars" aria-hidden="true" id="menu-icon"></i>
+          <i class="cross hidden" aria-hidden="true" id="menu-icon"></i>
           Меню
         </div>
         
         <a href="/" class="logo logo-litera">GEEKT<span>O</span>P</a>
         
-        <nav class="menu__main" id="menu">
+        <nav class="menu__main">
           <ul>
             <li class="active">
               <a href="#">Электроника</a>
@@ -51,9 +51,9 @@
             </li>
           </ul>
         </nav>
+        
         <div class="search__icon" title="Поик по сайту" id="search">
           <i class="search" aria-hidden="true"></i>
-        
         </div>
         
         <form class="search__field hidden" action="/search.html" id="search">
