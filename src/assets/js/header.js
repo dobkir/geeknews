@@ -153,7 +153,9 @@ const hiddenByEscapeKey = (element) => {
  */
 const hiddenByClickAnywhere = (toggleButton, element) => {
   document.addEventListener('click', (event) => {
-    if (!element.contains(event.target) && !toggleButton.contains(event.target)) {
+    if (mediaQueryToggleMenu &&
+      !element.contains(event.target) &&
+      !toggleButton.contains(event.target)) {
       showBarsIcon(toggleButton);
       hiddenElement(element);
     }
