@@ -4,7 +4,7 @@ const { src, dest } = require("gulp");
 const gulp = require("gulp");
 const autoprefixer = require("gulp-autoprefixer");
 const cssbeautify = require("gulp-cssbeautify");
-const removeComments = require('gulp-strip-css-comments');
+const removeComments = require("gulp-strip-css-comments");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const cssnano = require("gulp-cssnano");
@@ -14,15 +14,15 @@ const panini = require("panini");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
 const notify = require("gulp-notify");
-const webpack = require('webpack');
-const webpackStream = require('webpack-stream');
+const webpack = require("webpack");
+const webpackStream = require("webpack-stream");
 const browserSync = require("browser-sync").create();
-const ghPages = require('gulp-gh-pages');
+const ghPages = require("gulp-gh-pages");
 
 
 /* Paths */
-const srcPath = 'src/';
-const distPath = 'dist/';
+const srcPath = "src/";
+const distPath = "dist/";
 
 const path = {
     build: {
@@ -67,10 +67,10 @@ function html(cb) {
         .pipe(plumber())
         .pipe(panini({
             root: srcPath,
-            layouts: srcPath + 'layouts/',
-            partials: srcPath + 'partials/',
-            helpers: srcPath + 'helpers/',
-            data: srcPath + 'data/'
+            layouts: srcPath + "layouts/",
+            partials: srcPath + "partials/",
+            helpers: srcPath + "helpers/",
+            data: srcPath + "data/"
         }))
         .pipe(dest(path.build.html))
         .pipe(browserSync.reload({ stream: true }));
@@ -86,11 +86,11 @@ function css(cb) {
                     title: "SCSS Error",
                     message: "Error: <%= error.message %>"
                 })(err);
-                this.emit('end');
+                this.emit("end");
             }
         }))
         .pipe(sass({
-            includePaths: './node_modules/'
+            includePaths: "./node_modules/"
         }))
         .pipe(autoprefixer({
             cascade: true
@@ -122,11 +122,11 @@ function cssWatch(cb) {
                     title: "SCSS Error",
                     message: "Error: <%= error.message %>"
                 })(err);
-                this.emit('end');
+                this.emit("end");
             }
         }))
         .pipe(sass({
-            includePaths: './node_modules/'
+            includePaths: "./node_modules/"
         }))
         .pipe(rename({
             suffix: ".min",
@@ -139,29 +139,29 @@ function cssWatch(cb) {
 }
 
 function js(cb) {
-    return src(path.src.js, { base: srcPath + 'assets/js/' })
+    return src(path.src.js, { base: srcPath + "assets/js/" })
         .pipe(plumber({
             errorHandler: function (err) {
                 notify.onError({
                     title: "JS Error",
                     message: "Error: <%= error.message %>"
                 })(err);
-                this.emit('end');
+                this.emit("end");
             }
         }))
         .pipe(webpackStream({
             mode: "production",
             output: {
-                filename: 'app.js',
+                filename: "app.js",
             },
             module: {
                 rules: [
                     {
                         test: /\.(js)$/,
                         exclude: /(node_modules)/,
-                        loader: 'babel-loader',
+                        loader: "babel-loader",
                         query: {
-                            presets: ['@babel/preset-env']
+                            presets: ["@babel/preset-env"]
                         }
                     }
                 ]
@@ -174,20 +174,20 @@ function js(cb) {
 }
 
 function jsWatch(cb) {
-    return src(path.src.js, { base: srcPath + 'assets/js/' })
+    return src(path.src.js, { base: srcPath + "assets/js/" })
         .pipe(plumber({
             errorHandler: function (err) {
                 notify.onError({
                     title: "JS Error",
                     message: "Error: <%= error.message %>"
                 })(err);
-                this.emit('end');
+                this.emit("end");
             }
         }))
         .pipe(webpackStream({
             mode: "development",
             output: {
-                filename: 'app.js',
+                filename: "app.js",
             }
         }))
         .pipe(dest(path.build.js))
@@ -230,7 +230,7 @@ function clean(cb) {
 }
 
 function deploy() {
-    return gulp.src('./dist/**/*')
+    return gulp.src("./dist/**/*")
         .pipe(ghPages());
 };
 

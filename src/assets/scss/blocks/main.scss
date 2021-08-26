@@ -1,7 +1,258 @@
 .main {
-  height: $main-heigh;
+  display: flex;
+  justify-content: center;
 
-  font-size: 3rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 500;
   text-align: center;
+}
+
+.container {
+  width: 1141px;
+  display: grid;
+  grid-template-columns: auto repeat(12, 1fr) auto;
+  grid-template-rows: 130px 350px 350px 324px 324px 420px 422px 422px 328px 328px 170px;
+  grid-template-areas:
+    ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ."
+    ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ."
+    ". electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right electronics-bottom-right electronics-bottom-right ."
+    ". news-top-left news-top-left news-top-left news-top-left news-top-right news-top-right news-top-right news-top-right social social social social ."
+    ". news-bottom-left news-bottom-left news-bottom-left news-bottom-left news-bottom-right news-bottom-right news-bottom-right news-bottom-right ad-unit-2 ad-unit-2 ad-unit-2 ad-unit-2 ."
+    ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews ."
+    ". lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-right lifehacks-top-right lifehacks-top-right lifehacks-top-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ."
+    ". lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ."
+    ". diy-hot diy-hot diy-hot diy-hot diy-top diy-top diy-top diy-top diy-top diy-top diy-top diy-top ."
+    ". diy-hot diy-hot diy-hot diy-hot diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ."
+    ". more more more more more more more more more more more more .";
+  align-items: center;
+}
+
+.electronics-top-left {
+  grid-area: electronics-top-left;
+
+  display: block;
+  position: relative;
+}
+
+.electronics-top-right {
+  grid-area: electronics-top-right;
+
+  position: relative;
+}
+
+.electronics-bottom-left {
+  grid-area: electronics-bottom-left;
+
+  position: relative;
+}
+
+.electronics-bottom-center {
+  grid-area: electronics-bottom-center;
+
+  position: relative;
+}
+
+.electronics-bottom-right {
+  grid-area: electronics-bottom-right;
+
+  position: relative;
+}
+
+.news-top-left {
+  grid-area: news-top-left;
+}
+
+.news-top-right {
+  grid-area: news-top-right;
+}
+
+.news-bottom-left {
+  grid-area: news-bottom-left;
+}
+
+.news-bottom-right {
+  grid-area: news-bottom-right;
+}
+
+.reviews {
+  grid-area: reviews;
+
+  color: $white;
+  background-color: $dark-blue;
+}
+
+.lifehacks-top-left {
+  grid-area: lifehacks-top-left;
+}
+
+.lifehacks-top-right {
+  grid-area: lifehacks-top-right;
+}
+
+.lifehacks-bottom-left {
+  grid-area: lifehacks-bottom-left;
+}
+
+.lifehacks-bottom-right {
+  grid-area: lifehacks-bottom-right;
+}
+
+.diy-hot {
+  grid-area: diy-hot;
+}
+
+.diy-top {
+  grid-area: diy-top;
+}
+
+.diy-bottom {
+  grid-area: diy-bottom;
+}
+
+.more {
+  grid-area: more;
+}
+
+.ad-unit-1 {
+  grid-area: ad-unit-1;
+}
+
+.ad-unit-2 {
+  grid-area: ad-unit-2;
+}
+
+.ad-unit-3 {
+  grid-area: ad-unit-3;
+}
+
+.electronics__link {
+
+  &--title {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.25;
+    font-size: 1rem;
+  }
+
+  &--title__link {
+    color: $white;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+
+    }
+  }
+
+  &--content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    color: $white;
+    padding: 40px;
+    z-index: 1;
+
+    @media screen and (max-width: 991px) {
+      padding: 40px 30px;
+    }
+  }
+
+  &::before {
+    content: '';
+    background-color: $dark;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .45;
+    -webkit-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  &::after {
+    content: '';
+    background-color: $dark;
+    border: 1px solid $white;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0;
+    -webkit-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease
+  }
+
+  &:hover::before,
+  &:focus::before {
+    opacity: .75;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: .2;
+  }
+}
+
+.item__social {
+  margin-top: 10px;
+  margin-left: 0;
+
+  &--links {
+    padding: 0 4px 0 3px;
+    position: relative;
+    cursor: pointer;
+    margin: 6px 2px 0;
+    border: 1px solid #fff;
+    border-radius: 2px;
+  }
+}
+
+.item__social .fa {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.item__comments {
+  display: inline-block;
+  margin-right: 20px;
+
+  &--count {
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: '';
+      font-family: fontawesome;
+      font-size: 5px;
+      top: 35%;
+      margin-left: 10px;
+      margin-right: 10px;
+      position: absolute;
+      opacity: .25;
+    }
+  }
+}
+
+.likely {
+  padding: 0;
+  text-indent: 0;
+  list-style: none;
+  font-weight: 400;
+  font-family: Helvetica Neue,
+    Arial,
+    sans-serif;
+}
+
+.likely__custom {
+  display: inline-block;
+  font-size: 12px;
 }

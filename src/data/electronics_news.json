@@ -1,0 +1,12 @@
+{
+  "first_news": {
+  "header": "Новые смартфоны покорили поклонников мобильной индустрии",
+  "image": "assets/images/blog/electronics/1.jpg",
+  "comments_counter": "26"
+  },
+  "second_news": {
+  "header": "MacBook Федя занял своё почётное место на бабушкином столе из 60-х",
+  "image": "assets/images/blog/electronics/2.jpg",
+  "comments_counter": "14"
+  }
+}

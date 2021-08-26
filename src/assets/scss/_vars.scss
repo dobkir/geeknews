@@ -3,8 +3,9 @@
 $accent: #ec1c1c; // Accent Color
 $fontsize: 1rem; // Body Font Size
 $textcolor: #333; // Text Color
-$dark: #202222; // Dark color
-$white: #fff;
+$dark: #202225; // Dark color
+$white: #fafafa;
+$white-1: #f5f5f5;
 $dark-blue: #1c2026; // Dark blue (on footer)
 $lineheight: 1.5; // Document Line Height
 $userfont: roboto-g,
@@ -25,7 +26,6 @@ sans-serif,
 // SIZES
 $header-height: 3.61rem;
 $footer-height: 19.44rem;
-$main-heigh: calc(100vh - #{$header-height} - #{$footer-height});
 
 // FONTAWESOME LOAD SECTION
 
