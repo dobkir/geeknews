@@ -1,14 +1,14 @@
-{{#if header}}
+{{#if heading}}
 
 <a href="#" class="electronics__link">
-  <img src={{image}} alt="image: {{header}}" width={{width}} height={{height}}>
+  <img src={{image}} alt="image: {{heading}}" width={{width}} height={{height}}>
 </a>
 
 <div class="electronics__link--content">
 
   <h3 class="electronics__link--title">
     <a class="electronics__link--title__link" href="#">
-      {{header}}
+      {{heading}}
     </a>
   </h3>
 
@@ -18,7 +18,7 @@
       <a href="#disqus_thread" class="item__comments--count">{{comments_counter}}</a>
     </div>
     <div class="fa fa-share-alt" title="Поделиться в соц. сетях"></div>
-    <div class="likely likely__custom" data-url="path" data-media={{image}} data-title={{header}}>
+    <div class="likely likely__custom" data-url="path" data-media={{image}} data-title={{heading}}>
       <a class="item__social--links" href="#" title="Поделиться Вконтакте">
         <i class="fa fa-vk" aria-hidden="true"></i>
         Вконтакте
@@ -36,5 +36,5 @@
 </div>
 
 {{else}}
-<p>Electronics news folder is empty</p>
+<p>Heading of this article is lost</p>
 {{/if}}

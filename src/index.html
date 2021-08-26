@@ -10,45 +10,53 @@ title: GeekTop News | Home
 </div>
 <!-- /.ad-unit-1 -->
 
+{{! Data is retrieved from src.data}}
+{{#with electronics_news}}
 <section class="electronics-top-left">
-  {{> electronics_elem
-  header="Новые смартфоны покорили поклонников мобильной индустрии"
-  image="assets/images/blog/electronics/1.jpg"
-  comments_counter="26" width="570px" height="350px"}}
+  {{#if first_news}}
+  {{> electronics_elem first_news}}
+  {{else}}
+  <p>Electronics first news folder is empty</p>
+  {{/if}}
 </section>
 <!-- /.electronics-top-left -->
 
 <section class="electronics-top-right">
-  {{> electronics_elem
-  header="MacBook Федя занял своё почётное место на бабушкином столе из 60-х"
-  image="assets/images/blog/electronics/2.jpg"
-  comments_counter="14" width="570px" height="350px"}}
+  {{#if second_news}}
+  {{> electronics_elem second_news}}
+  {{else}}
+  <p>Electronics second news folder is empty</p>
+  {{/if}}
 </section>
 <!-- /.electronics-top-right -->
 
 <section class="electronics-bottom-left">
-  {{> electronics_elem
-  header="На стол знаменитой Московской студии поставили 2 новых девайса"
-  image="assets/images/blog/electronics/3.jpg"
-  comments_counter="14" width="380px" height="350px"}}
+  {{#if third_news}}
+  {{> electronics_elem third_news}}
+  {{else}}
+  <p>Electronics third news folder is empty</p>
+  {{/if}}
 </section>
 <!-- /.electronics-bottom-left -->
 
 <section class="electronics-bottom-center">
-  {{> electronics_elem
-  header="Новенькие наушники, стилизованные под объективы камер положили на грязный поддон"
-  image="assets/images/blog/electronics/4.jpg"
-  comments_counter="14" width="380px" height="350px"}}
+  {{#if fourth_news}}
+  {{> electronics_elem fourth_news}}
+  {{else}}
+  <p>Electronics fourth news folder is empty</p>
+  {{/if}}
 </section>
 <!-- /.electronics-bottom-center -->
 
 <section class="electronics-bottom-right">
-  {{> electronics_elem
-  header="MacBook Гриша нашел свой дом на нижней полке самодельного короба для обуви"
-  image="assets/images/blog/electronics/5.jpg"
-  comments_counter="14" width="380px" height="350px"}}
+  {{#if fifth_news}}
+  {{> electronics_elem fifth_news}}
+  {{else}}
+  <p>Electronics fifth news folder is empty</p>
+  {{/if}}
 </section>
 <!-- /.electronics-bottom-right -->
+{{/with}}
 
 <section class="news-top-left">
   news-top-left

@@ -1,12 +1,37 @@
 {
   "first_news": {
-  "header": "Новые смартфоны покорили поклонников мобильной индустрии",
+  "heading": "Новые смартфоны покорили поклонников мобильной индустрии",
   "image": "assets/images/blog/electronics/1.jpg",
-  "comments_counter": "26"
+  "comments_counter": "26",
+  "width": "570px",
+  "height": "350px"
   },
   "second_news": {
-  "header": "MacBook Федя занял своё почётное место на бабушкином столе из 60-х",
+  "heading": "MacBook Федя занял своё почётное место на бабушкином столе из 60-х",
   "image": "assets/images/blog/electronics/2.jpg",
-  "comments_counter": "14"
+  "comments_counter": "14",
+  "width": "570px",
+  "height": "350px"
+  },
+   "third_news": {
+  "heading": "На стол знаменитой Московской студии поставили 2 новых девайса",
+  "image": "assets/images/blog/electronics/3.jpg",
+  "comments_counter": "14",
+  "width": "380px",
+  "height": "350px"
+  },
+   "fourth_news": {
+  "heading": "Новенькие наушники, стилизованные под объективы камер положили на грязный поддон",
+  "image": "assets/images/blog/electronics/4.jpg",
+  "comments_counter": "14",
+  "width": "380px",
+  "height": "350px"
+  },
+   "fifth_news": {
+  "heading": "MacBook Гриша нашел свой дом на нижней полке самодельного короба для обуви",
+  "image": "assets/images/blog/electronics/5.jpg",
+  "comments_counter": "14",
+  "width": "380px",
+  "height": "350px"
   }
 }
