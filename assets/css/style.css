@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -9393,11 +9394,11 @@ textarea {
 }
 
 body {
+    min-width: 320px;
     font-family: roboto-g, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     color: #333;
-    min-width: 320px;
     position: relative;
     overflow-x: hidden;
 }
@@ -9439,13 +9440,12 @@ body {
 }
 
 a {
-    color: #ec1c1c;
+    color: #fafafa;
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus {
     color: #ec1c1c;
-    text-decoration: underline;
 }
 
 /* Blocks */
@@ -9453,7 +9453,7 @@ a:hover {
     display: inline-block;
     font-family: baron_neue_bold, sans-serif;
     font-size: 1.27rem;
-    color: #fff;
+    color: #fafafa;
     text-decoration: none;
 }
 
@@ -9498,7 +9498,7 @@ a:hover {
     font-weight: bold;
     line-height: 3.61rem;
     letter-spacing: .1rem;
-    color: #fff;
+    color: #fafafa;
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
@@ -9543,19 +9543,19 @@ a:hover {
 }
 
 .menu__main li a:hover, .menu__main li a:focus {
-    color: #fff;
-    background-color: #343737;
+    color: #fafafa;
+    background-color: #33363b;
 }
 
 .menu__main li a.active {
-    color: #fff;
-    background-color: #2c2f2f;
+    color: #fafafa;
+    background-color: #2c2f33;
 }
 
 @media screen and (max-width: 991px) {
     .menu__main {
-        background-color: #272a2a;
-        border-top: 1px solid #2c2f2f;
+        background-color: #272a2d;
+        border-top: 1px solid #2c2f33;
     }
 
     .menu__main ul {
@@ -9607,9 +9607,9 @@ a:hover {
     font-size: 1.33rem;
     text-align: center;
     line-height: 3.06rem;
-    color: #fff;
+    color: #fafafa;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(250, 250, 250, 0.1);
     transition: border-color .25s ease, opacity .25s ease;
 }
 
@@ -9655,7 +9655,7 @@ a:hover {
 
 .header {
     height: 3.61rem;
-    background-color: #202222;
+    background-color: #202225;
     position: relative;
 }
 
@@ -9680,9 +9680,9 @@ a:hover {
     display: block;
     padding: .83rem;
     width: 100%;
-    background-color: #272a2a;
+    background-color: #272a2d;
     width: 100%;
-    border-top: 1px solid #2c2f2f;
+    border-top: 1px solid #2c2f33;
     position: absolute;
     top: 3.61rem;
     left: 0;
@@ -9693,51 +9693,277 @@ a:hover {
     padding: .44rem .83rem;
     width: 100%;
     font-size: .89rem;
-    color: #fff;
-    background-color: #313434;
-    border: 1px solid #393c3c;
+    color: #fafafa;
+    background-color: #313438;
+    border: 1px solid #383b40;
     outline: none;
 }
 
 .search__field input[type=text]:focus {
-    border-color: #515757;
+    border-color: #4f545c;
 }
 
 .search__field input[type=text]::-webkit-input-placeholder {
     font-family: arial, sans-serif;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(250, 250, 250, 0.3);
 }
 
 .search__field input[type=text]::-moz-placeholder {
     font-family: arial, sans-serif;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(250, 250, 250, 0.3);
 }
 
 .search__field input[type=text]:-ms-input-placeholder {
     font-family: arial, sans-serif;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(250, 250, 250, 0.3);
 }
 
 .search__field input[type=text]::-ms-input-placeholder {
     font-family: arial, sans-serif;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(250, 250, 250, 0.3);
 }
 
 .search__field input[type=text]::placeholder {
     font-family: arial, sans-serif;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(250, 250, 250, 0.3);
 }
 
 .main {
-    height: calc(100vh - 3.61rem - 19.44rem);
-    font-size: 3rem;
-    font-weight: 900;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
     text-align: center;
+}
+
+.container {
+    width: 1141px;
+    display: grid;
+    grid-template-columns: auto repeat(12, 1fr) auto;
+    grid-template-rows: 130px 350px 350px 324px 324px 420px 422px 422px 328px 328px 170px;
+    grid-template-areas: ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ." ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ." ". electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right electronics-bottom-right electronics-bottom-right ." ". news-top-left news-top-left news-top-left news-top-left news-top-right news-top-right news-top-right news-top-right social social social social ." ". news-bottom-left news-bottom-left news-bottom-left news-bottom-left news-bottom-right news-bottom-right news-bottom-right news-bottom-right ad-unit-2 ad-unit-2 ad-unit-2 ad-unit-2 ." ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews ." ". lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-right lifehacks-top-right lifehacks-top-right lifehacks-top-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". diy-hot diy-hot diy-hot diy-hot diy-top diy-top diy-top diy-top diy-top diy-top diy-top diy-top ." ". diy-hot diy-hot diy-hot diy-hot diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ." ". more more more more more more more more more more more more .";
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.electronics-top-left {
+    grid-area: electronics-top-left;
+    display: block;
+    position: relative;
+}
+
+.electronics-top-right {
+    grid-area: electronics-top-right;
+    position: relative;
+}
+
+.electronics-bottom-left {
+    grid-area: electronics-bottom-left;
+    position: relative;
+}
+
+.electronics-bottom-center {
+    grid-area: electronics-bottom-center;
+    position: relative;
+}
+
+.electronics-bottom-right {
+    grid-area: electronics-bottom-right;
+    position: relative;
+}
+
+.news-top-left {
+    grid-area: news-top-left;
+}
+
+.news-top-right {
+    grid-area: news-top-right;
+}
+
+.news-bottom-left {
+    grid-area: news-bottom-left;
+}
+
+.news-bottom-right {
+    grid-area: news-bottom-right;
+}
+
+.reviews {
+    grid-area: reviews;
+    color: #fafafa;
+    background-color: #1c2026;
+}
+
+.lifehacks-top-left {
+    grid-area: lifehacks-top-left;
+}
+
+.lifehacks-top-right {
+    grid-area: lifehacks-top-right;
+}
+
+.lifehacks-bottom-left {
+    grid-area: lifehacks-bottom-left;
+}
+
+.lifehacks-bottom-right {
+    grid-area: lifehacks-bottom-right;
+}
+
+.diy-hot {
+    grid-area: diy-hot;
+}
+
+.diy-top {
+    grid-area: diy-top;
+}
+
+.diy-bottom {
+    grid-area: diy-bottom;
+}
+
+.more {
+    grid-area: more;
+}
+
+.ad-unit-1 {
+    grid-area: ad-unit-1;
+}
+
+.ad-unit-2 {
+    grid-area: ad-unit-2;
+}
+
+.ad-unit-3 {
+    grid-area: ad-unit-3;
+}
+
+.electronics__link--title {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.25;
+    font-size: 1rem;
+}
+
+.electronics__link--title__link {
+    color: #fafafa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.electronics__link--title__link:hover {
+    text-decoration: none;
+}
+
+.electronics__link--content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    color: #fafafa;
+    padding: 40px;
+    z-index: 1;
+}
+
+@media screen and (max-width: 991px) {
+    .electronics__link--content {
+        padding: 40px 30px;
+    }
+}
+
+.electronics__link::before {
+    content: '';
+    background-color: #202225;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .45;
+    transition: opacity .25s ease;
+}
+
+.electronics__link::after {
+    content: '';
+    background-color: #202225;
+    border: 1px solid #fafafa;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+.electronics__link:hover::before, .electronics__link:focus::before {
+    opacity: .75;
+}
+
+.electronics__link:hover::after, .electronics__link:focus::after {
+    opacity: .2;
+}
+
+.item__social {
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.item__social--links {
+    padding: 0 4px 0 3px;
+    position: relative;
+    cursor: pointer;
+    margin: 6px 2px 0;
+    border: 1px solid #fff;
+    border-radius: 2px;
+}
+
+.item__social .fa {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.item__comments {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.item__comments--count {
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+}
+
+.item__comments--count::after {
+    content: '';
+    font-family: fontawesome;
+    font-size: 5px;
+    top: 35%;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: absolute;
+    opacity: .25;
+}
+
+.likely {
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+    font-weight: 400;
+    font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+.likely__custom {
+    display: inline-block;
+    font-size: 12px;
 }
 
 .footer {
@@ -9756,7 +9982,7 @@ a:hover {
     padding: 2.5rem 0 0;
     font-size: .72rem;
     text-align: center;
-    border-top: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-top: 0.5px solid rgba(250, 250, 250, 0.2);
 }
 
 @media screen and (max-width: 991px) {
@@ -9769,12 +9995,12 @@ a:hover {
 .copy__rights {
     font-family: baron-g, sans-serif;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(250, 250, 250, 0.45);
 }
 
 .copy__rights--message {
     margin: 1rem;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(250, 250, 250, 0.2);
 }
 
 @media screen and (max-width: 991px) {
