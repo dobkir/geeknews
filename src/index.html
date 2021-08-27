@@ -3,16 +3,18 @@ layout: default
 title: GeekTop News | Home
 ---
 
-<div class="ad-unit-1">
+<div class="ad__unit--1">
   <a href="#" class="banner banner-1">
     <img src="assets/images/adHorizontal.jpg" alt="alt" width="968px" height="90px">
   </a>
 </div>
 <!-- /.ad-unit-1 -->
 
+<!-------------- Electronics news -------------->
+
 {{! Data is retrieved from src.data}}
 {{#with electronics_news}}
-<section class="electronics-top-left">
+<section class="electronics__top--left">
   {{#if first_news}}
   {{> electronics_elem first_news}}
   {{else}}
@@ -21,7 +23,7 @@ title: GeekTop News | Home
 </section>
 <!-- /.electronics-top-left -->
 
-<section class="electronics-top-right">
+<section class="electronics__top--right">
   {{#if second_news}}
   {{> electronics_elem second_news}}
   {{else}}
@@ -30,7 +32,7 @@ title: GeekTop News | Home
 </section>
 <!-- /.electronics-top-right -->
 
-<section class="electronics-bottom-left">
+<section class="electronics__bottom--left">
   {{#if third_news}}
   {{> electronics_elem third_news}}
   {{else}}
@@ -39,7 +41,7 @@ title: GeekTop News | Home
 </section>
 <!-- /.electronics-bottom-left -->
 
-<section class="electronics-bottom-center">
+<section class="electronics__bottom--center">
   {{#if fourth_news}}
   {{> electronics_elem fourth_news}}
   {{else}}
@@ -48,7 +50,7 @@ title: GeekTop News | Home
 </section>
 <!-- /.electronics-bottom-center -->
 
-<section class="electronics-bottom-right">
+<section class="electronics__bottom--right">
   {{#if fifth_news}}
   {{> electronics_elem fifth_news}}
   {{else}}
@@ -58,62 +60,105 @@ title: GeekTop News | Home
 <!-- /.electronics-bottom-right -->
 {{/with}}
 
-<section class="news-top-left">
-  news-top-left
-</section>
-<!-- /.news-top-left -->
+<!-------------- /Electronics news -------------->
 
-<section class="news-top-right">
-  news-top-right
-</section>
-<!-- /.news-top-right -->
 
-<section class="news-bottom-left">
-  news-bottom-left
-</section>
-<!-- /.news-bottom-left -->
 
-<section class="news-bottom-right">
-  news-bottom-right
+<!------------------- IT news ------------------->
+
+<h2 class="it-news__title">
+  <a class="section__title" href="#">
+    Новости IT
+  </a>
+</h2>
+
+{{! Data is retrieved from src.data}}
+{{#with it_news}}
+<section class="it-news__top--left">
+  {{#if first_news}}
+  {{> it_elem first_news}}
+  {{else}}
+  <p>IT first news folder is empty</p>
+  {{/if}}
 </section>
-<!-- /.news-bottom-right -->
+<!-- /.it-news-top-left -->
+
+<section class="it-news__top--right">
+  {{#if second_news}}
+  {{> it_elem second_news}}
+  {{else}}
+  <p>ID second news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.it-news-top-right -->
+
+<section class="it-news__bottom--left">
+  {{#if third_news}}
+  {{> it_elem third_news}}
+  {{else}}
+  <p>ID third news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.it-news-bottom-left -->
+
+<section class="it-news__bottom--right">
+  {{#if fourth_news}}
+  {{> it_elem fourth_news}}
+  {{else}}
+  <p>ID fourth news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.it-news-bottom-right -->
+{{/with}}
+
+<div class="social">
+  <img src="assets/images/vkWitget.jpg" width="361px" height="260px" alt="image: VK witget" class="img__responsive">
+</div>
+<!-- /.social -->
+
+<div class="ad__unit--2">
+  <img src="assets/images/adCube.jpg" width="361px" height="260px" alt="image: ad unit" class="img__responsive">
+</div>
+<!-- /.ad-unit-2 -->
+
+<!------------------- /IT news ------------------->
 
 <section class="reviews">
   reviews
 </section>
 <!-- /.reviews -->
 
-<section class="lifehacks-top-left">
+<section class="lifehacks__top--left">
   lifehacks-top-left
 </section>
 <!-- /.lifehacks-top-left -->
 
-<section class="lifehacks-top-right">
+<section class="lifehacks__top--right">
   lifehacks-top-right
 </section>
 <!-- /.lifehacks-top-right -->
 
-<section class="lifehacks-bottom-left">
+<section class="lifehacks__bottom--left">
   lifehacks-bottom-left
 </section>
 <!-- /.lifehacks-bottom-left -->
 
-<section class="lifehacks-bottom-right">
+<section class="lifehacks__bottom--right">
   lifehacks-bottom-right
 </section>
 <!-- /.lifehacks-bottom-right -->
 
-<section class="diy-hot">
+<section class="diy__hot">
   diy-hot
 </section>
 <!-- /.diy-hot -->
 
-<section class="diy-top">
+<section class="diy__top">
   diy-top
 </section>
 <!-- /.diy-top -->
 
-<section class="diy-bottom">
+<section class="diy__bottom">
   .diy-bottom
 </section>
 <!-- /.diy-bottom -->
@@ -123,12 +168,7 @@ title: GeekTop News | Home
 </div>
 <!-- /.more -->
 
-<div class="ad-unit-2">
-  ad-unit-2
-</div>
-<!-- /.ad-unit-2 -->
-
-<div class="ad-unit-3">
+<div class="ad__unit--3">
   ad-unit-3
 </div>
 <!-- /.ad-unit-3 -->

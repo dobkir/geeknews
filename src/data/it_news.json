@@ -1,0 +1,30 @@
+{
+  "first_news": {
+  "heading": "Золотистый iPhone предыдущего поколения положили на тыкву",
+  "image": "assets/images/blog/news/6.jpg",
+  "date": "27/08/2021",
+  "width": "361px",
+  "height": "234px"
+  },
+  "second_news": {
+  "heading": "Программист из Урюково посадил зрение после 22-х лет работы",
+  "image": "assets/images/blog/news/7.jpg",
+  "date": "09/08/2021",
+  "width": "361px",
+  "height": "234px"
+  },
+   "third_news": {
+  "heading": "Обнаружена первая в мире белая виниловая пластинка без дорожек",
+  "image": "assets/images/blog/news/8.jpg",
+  "date": "17/07/2021",
+  "width": "361px",
+  "height": "234px"
+  },
+   "fourth_news": {
+  "heading": "Человек впервые в мире сделал снимок моря в поле",
+  "image": "assets/images/blog/news/9.jpg",
+  "date": "21/06/2021",
+  "width": "361px",
+  "height": "234px"
+  }
+}

@@ -1,0 +1,20 @@
+{{#if heading}}
+
+<div class="it-news__section">
+  <a href="#" class="it-news__link">
+    <img src={{image}} alt="image: {{heading}}" width={{width}} height={{height}}>
+  </a>
+
+  <div class="it-news__link--content">
+    <h3 class="it-news__link--title">
+      <a class="it-news__link--title__link" href="#">
+        {{heading}}
+      </a>
+    </h3>
+    <span class="date">{{date}}</span>
+  </div>
+</div>
+
+{{else}}
+<p>Heading of this article is lost</p>
+{{/if}}

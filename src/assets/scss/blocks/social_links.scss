@@ -1,0 +1,55 @@
+.item__social {
+  margin-top: 10px;
+  margin-left: 0;
+
+  &--links {
+    padding: 0 4px 0 3px;
+    position: relative;
+    cursor: pointer;
+    margin: 6px 2px 0;
+    border: 1px solid #fff;
+    border-radius: 2px;
+  }
+}
+
+.item__social .fa {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.item__comments {
+  display: inline-block;
+  margin-right: 20px;
+
+  &--count {
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: '';
+      font-family: fontawesome;
+      font-size: 5px;
+      top: 35%;
+      margin-left: 10px;
+      margin-right: 10px;
+      position: absolute;
+      opacity: .25;
+    }
+  }
+}
+
+.likely {
+  padding: 0;
+  text-indent: 0;
+  list-style: none;
+  font-weight: 400;
+  font-family: Helvetica Neue,
+    Arial,
+    sans-serif;
+}
+
+.likely__custom {
+  display: inline-block;
+  font-size: 12px;
+}
