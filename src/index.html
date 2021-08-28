@@ -117,16 +117,65 @@ title: GeekTop News | Home
 <!-- /.social -->
 
 <div class="ad__unit--2">
-  <img src="assets/images/adCube.jpg" width="361px" height="260px" alt="image: ad unit" class="img__responsive">
+  <img src="assets/images/adCube.jpg" width="361px" height="240px" alt="image: ad unit" class="img__responsive">
 </div>
 <!-- /.ad-unit-2 -->
 
 <!------------------- /IT news ------------------->
 
+
+
+<!-------------------- Reviews -------------------->
+
 <section class="reviews">
-  reviews
+  <div class="reviews__container">
+    <h2 class="reviews__title">
+      <a class="section__title color--white" href="#">
+        Обзоры
+      </a>
+    </h2>
+
+    {{! Data is retrieved from src.data}}
+    {{#with reviews}}
+
+    <div class="reviews__carousel">
+      {{#if first_news}}
+      {{> reviews_elem first_news}}
+      {{else}}
+      <p>Reviews first folder is empty</p>
+      {{/if}}
+
+      {{#if second_news}}
+      {{> reviews_elem second_news}}
+      {{else}}
+      <p>Reviews second folder is empty</p>
+      {{/if}}
+
+      {{#if third_news}}
+      {{> reviews_elem third_news}}
+      {{else}}
+      <p>Reviews third folder is empty</p>
+      {{/if}}
+
+      {{#if fourth_news}}
+      {{> reviews_elem fourth_news}}
+      {{else}}
+      <p>Reviews fourth folder is empty</p>
+      {{/if}}
+    </div>
+    <!-- /.reviews__carousel -->
+    {{/with}}
+
+  </div>
+  <!-- /.reviews__container -->
 </section>
 <!-- /.reviews -->
+
+<!-------------------- /Reviews -------------------->
+
+
+
+<!-------------------- Lifehacks -------------------->
 
 <section class="lifehacks__top--left">
   lifehacks-top-left
@@ -148,6 +197,12 @@ title: GeekTop News | Home
 </section>
 <!-- /.lifehacks-bottom-right -->
 
+<!-------------------- /Lifehacks -------------------->
+
+
+
+<!----------------------- DIY ----------------------->
+
 <section class="diy__hot">
   diy-hot
 </section>
@@ -162,6 +217,8 @@ title: GeekTop News | Home
   .diy-bottom
 </section>
 <!-- /.diy-bottom -->
+
+<!----------------------- /DIY ----------------------->
 
 <div class="more">
   more

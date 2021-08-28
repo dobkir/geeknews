@@ -1,0 +1,122 @@
+.reviews__section {
+  margin-top: 1rem;
+  width: 263px;
+  height: 269px;
+
+  color: $textcolor;
+
+  position: relative;
+}
+
+.reviews__link {
+
+  &--title {
+    margin: 0;
+    // text-transform: uppercase;
+    font: normal 500 .83rem/1.17rem roboto-g;
+  }
+
+  &--title__link {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 11px;
+
+    color: $white;
+    text-decoration: none;
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+
+    cursor: pointer;
+  }
+
+  &--content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    color: $white;
+    z-index: 1;
+  }
+
+  &::before {
+    max-width: 263px;
+    max-height: 145px;
+    content: '';
+    background-color: $dark;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .25;
+    -webkit-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  &::after {
+    max-width: 263px;
+    max-height: 125px;
+    content: '';
+    background-color: $dark;
+    border: 1px solid $white;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0;
+    -webkit-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease
+  }
+
+  &:hover::before,
+  &:focus::before {
+    opacity: .75;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: .2;
+  }
+}
+
+.reviews__social {
+  display: flex;
+  align-items: center;
+  margin: 11px auto 11px 0;
+
+  .fa {
+    font-size: 12px;
+    margin-right: 5px;
+  }
+
+  .date {
+    margin-top: 5px;
+  }
+}
+
+.reviews__comments {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 20px;
+  opacity: .35;
+
+  &--count {
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: '';
+      font-family: fontawesome;
+      font-size: 5px;
+      top: 35%;
+      margin-left: -35px;
+      position: absolute;
+    }
+  }
+}

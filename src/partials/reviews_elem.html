@@ -1,0 +1,28 @@
+{{#if heading}}
+
+<div class="reviews__section">
+
+  <a href="#" class="reviews__link">
+    <img src={{image}} alt="image: {{heading}}" width={{width}} height={{height}}>
+  </a>
+
+  <div class="reviews__link--content">
+    <div class="reviews__social">
+      <span class="date">{{date}}</span>
+      <div class="reviews__comments" title="Количество комментариев">
+        <i class="fa fa-comments"></i>
+        <a href="#disqus_thread" class="reviews__comments--count">{{comments_counter}}</a>
+      </div>
+    </div>
+
+    <h3 class="reviews__link--title">
+      <a class="reviews__link--title__link" href="#">
+        {{heading}}
+      </a>
+    </h3>
+  </div>
+</div>
+
+{{else}}
+<p>Heading of this article is lost</p>
+{{/if}}

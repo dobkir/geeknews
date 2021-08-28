@@ -1,0 +1,36 @@
+{
+  "first_news": {
+  "heading": "Новый ноутбук с функцией настольного пылесоса всколыхнул сообщества гиков по всему миру",
+  "image": "assets/images/blog/reviews/10.jpg",
+  "date": "26/08/2021",
+  "comments_counter": "26",
+  "width": "263px",
+  "height": "145px"
+  },
+  "second_news": {
+  "heading": "Фотокамера со встроенным устройством ночного видения доступна к заказу через интернет",
+  "image": "assets/images/blog/reviews/11.jpg",
+  "date": "17/08/2021",
+  "comments_counter": "22",
+  "block_width": "263px",
+  "block_height": "269px",
+  "width": "263px",
+  "height": "145px"
+  },
+   "third_news": {
+  "heading": "Смартфон с функцией чтения мыслей собеседника был запрещён к продаже",
+  "image": "assets/images/blog/reviews/12.jpg",
+  "date": "30/07/2021",
+  "comments_counter": "19",
+  "width": "263px",
+  "height": "145px"
+  },
+   "fourth_news": {
+  "heading": "Как не запачкаться чужими козявками в коворкинге - советы бывалых",
+  "image": "assets/images/blog/reviews/13.jpg",
+  "date": "14/07/2021",
+  "comments_counter": "11",
+  "width": "263px",
+  "height": "145px"
+  }
+}
