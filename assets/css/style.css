@@ -9448,12 +9448,6 @@ a:hover, a:focus {
     color: #ec1c1c;
 }
 
-.img__responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
 /* Blocks */
 .logo {
     display: inline-block;
@@ -9660,7 +9654,7 @@ a:hover, a:focus {
 }
 
 .header {
-    height: 3.61rem;
+    height: 65px;
     background-color: #202225;
     position: relative;
 }
@@ -9815,12 +9809,12 @@ a:hover, a:focus {
     text-align: center;
 }
 
-.container {
+.main__container {
     width: 1141px;
     display: grid;
     grid-template-columns: auto repeat(12, 1fr) auto;
-    grid-template-rows: 130px 350px 350px 78px 264px 264px 420px 422px 422px 328px 328px 170px;
-    grid-template-areas: ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ." ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ." ". electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right electronics-bottom-right electronics-bottom-right ." ". it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title social social social social ." ". it-news-top-left it-news-top-left it-news-top-left it-news-top-left it-news-top-right it-news-top-right it-news-top-right it-news-top-right social social social social ." ". it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-right it-news-bottom-right it-news-bottom-right it-news-bottom-right ad-unit-2 ad-unit-2 ad-unit-2 ad-unit-2 ." ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews ." ". lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-right lifehacks-top-right lifehacks-top-right lifehacks-top-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". diy-hot diy-hot diy-hot diy-hot diy-top diy-top diy-top diy-top diy-top diy-top diy-top diy-top ." ". diy-hot diy-hot diy-hot diy-hot diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ." ". more more more more more more more more more more more more .";
+    grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 422px 422px 328px 328px 170px;
+    grid-template-areas: ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ." ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ." ". electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right electronics-bottom-right electronics-bottom-right ." ". it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title social social social social ." ". it-news-top-left it-news-top-left it-news-top-left it-news-top-left it-news-top-right it-news-top-right it-news-top-right it-news-top-right social social social social ." ". it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-right it-news-bottom-right it-news-bottom-right it-news-bottom-right ad-unit-2 ad-unit-2 ad-unit-2 ad-unit-2 ." "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews" ". lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-right lifehacks-top-right lifehacks-top-right lifehacks-top-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". diy-hot diy-hot diy-hot diy-hot diy-top diy-top diy-top diy-top diy-top diy-top diy-top diy-top ." ". diy-hot diy-hot diy-hot diy-hot diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ." ". more more more more more more more more more more more more .";
     -ms-flex-align: center;
     align-items: center;
 }
@@ -9830,6 +9824,10 @@ a:hover, a:focus {
     color: #ec1c1c;
     text-transform: uppercase;
     text-decoration: underline;
+}
+
+.section__title:hover, .section__title:focus {
+    color: #f69292;
 }
 
 .electronics__top--left {
@@ -9868,22 +9866,47 @@ a:hover, a:focus {
 
 .it-news__top--right {
     grid-area: it-news-top-right;
-    margin-left: 10px;
+    margin-left: .56rem;
 }
 
 .it-news__bottom--left {
     grid-area: it-news-bottom-left;
+    margin-bottom: 2.5rem;
 }
 
 .it-news__bottom--right {
     grid-area: it-news-bottom-right;
-    margin-left: 10px;
+    margin-left: .56rem;
+    margin-bottom: 2.5rem;
 }
 
 .reviews {
     grid-area: reviews;
+    margin-left: -100%;
+    margin-right: -100%;
+    min-height: 100%;
+    min-width: 100vw;
     color: #fafafa;
     background-color: #1c2026;
+    position: relative;
+}
+
+.reviews__container {
+    margin: 0 auto;
+    height: 100%;
+    width: 1141px;
+}
+
+.reviews__title {
+    margin: 3.5rem auto 0 0;
+    text-align: left;
+}
+
+.reviews__carousel {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .lifehacks__top--left {
@@ -9924,7 +9947,7 @@ a:hover, a:focus {
 
 .ad__unit--2 {
     grid-area: ad-unit-2;
-    margin-top: 10px;
+    margin-bottom: 25px;
     margin-left: auto;
 }
 
@@ -10065,8 +10088,118 @@ a:hover, a:focus {
     opacity: .2;
 }
 
+.reviews__section {
+    margin-top: 1rem;
+    width: 263px;
+    height: 269px;
+    color: #333;
+    position: relative;
+}
+
+.reviews__link--title {
+    margin: 0;
+    font: normal 500 .83rem/1.17rem roboto-g;
+}
+
+.reviews__link--title__link {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 11px;
+    color: #fafafa;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.reviews__link--content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    color: #fafafa;
+    z-index: 1;
+}
+
+.reviews__link::before {
+    max-width: 263px;
+    max-height: 145px;
+    content: '';
+    background-color: #202225;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .25;
+    transition: opacity .25s ease;
+}
+
+.reviews__link::after {
+    max-width: 263px;
+    max-height: 125px;
+    content: '';
+    background-color: #202225;
+    border: 1px solid #fafafa;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+.reviews__link:hover::before, .reviews__link:focus::before {
+    opacity: .75;
+}
+
+.reviews__link:hover::after, .reviews__link:focus::after {
+    opacity: .2;
+}
+
+.reviews__social {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 11px auto 11px 0;
+}
+
+.reviews__social .fa {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.reviews__social .date {
+    margin-top: 5px;
+}
+
+.reviews__comments {
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+    opacity: .35;
+}
+
+.reviews__comments--count {
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+}
+
+.reviews__comments--count::before {
+    content: '';
+    font-family: fontawesome;
+    font-size: 5px;
+    top: 35%;
+    margin-left: -35px;
+    position: absolute;
+}
+
 .footer {
-    height: 19.44rem;
+    height: 350px;
     background-color: #1c2026;
 }
 
@@ -10106,6 +10239,16 @@ a:hover, a:focus {
     .copy__rights--message {
         margin: .5rem;
     }
+}
+
+.img__responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.color--white {
+    color: #fafafa;
 }
 
 .hidden {
