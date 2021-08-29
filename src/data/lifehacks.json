@@ -1,0 +1,34 @@
+{
+  "first_lifehack": {
+  "heading": "Как сделать селфи в дремучей тайге и вернуться живым",
+  "image": "assets/images/blog/lifehacks/14.jpg",
+  "comments_counter": "26",
+  "date": "26/08/2021",
+  "width": "379px",
+  "height": "322px"
+  },
+  "second_lifehack": {
+  "heading": "Как фотографировать на кирзовый сапог и получать HD",
+  "image": "assets/images/blog/lifehacks/15.jpg",
+  "comments_counter": "32",
+  "date": "19/08/2021",
+  "width": "379px",
+  "height": "322px"
+  },
+   "third_lifehack": {
+  "heading": "Leica из подручных материалов своими руками",
+  "image": "assets/images/blog/lifehacks/16.jpg",
+  "comments_counter": "15",
+  "date": "27/07/2021",
+  "width": "379px",
+  "height": "322px"
+  },
+   "fourth_lifehack": {
+  "heading": "Как оцифровать то, не знаю во что",
+  "image": "assets/images/blog/lifehacks/17.jpg",
+  "comments_counter": "22",
+  "date": "15/06/2021",
+  "width": "379px",
+  "height": "322px"
+  }
+}

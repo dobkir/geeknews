@@ -1,26 +1,17 @@
-.reviews__section {
-  margin-top: 1rem;
-  width: 263px;
-  height: 269px;
-
-  color: $textcolor;
-
-  position: relative;
-}
-
-.reviews__link {
+.lifehacks__link {
 
   &--title {
     margin: 0;
-
-    font: normal 500 .83rem/1.17rem roboto-g;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.25;
+    font-size: 1rem;
   }
 
   &--title__link {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    margin-bottom: 11px;
 
     color: $white;
     text-decoration: none;
@@ -37,12 +28,12 @@
     bottom: 0;
     text-align: left;
     color: $white;
+    padding: 40px;
     z-index: 1;
   }
 
+
   &::before {
-    max-width: 263px;
-    max-height: 145px;
     content: '';
     background-color: $dark;
     position: absolute;
@@ -50,15 +41,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: .25;
+    opacity: .45;
     -webkit-transition: opacity .25s ease;
     -o-transition: opacity .25s ease;
     transition: opacity .25s ease;
   }
 
   &::after {
-    max-width: 263px;
-    max-height: 125px;
     content: '';
     background-color: $dark;
     border: 1px solid $white;
@@ -84,10 +73,10 @@
   }
 }
 
-.reviews__social {
+.lifehacks__social {
   display: flex;
   align-items: center;
-  margin: 11px auto 11px 0;
+  margin: 11px auto 0 0;
 
   .fa {
     font-size: 12px;
@@ -96,14 +85,13 @@
 
   .date {
     margin-top: 5px;
+    color: $white;
   }
 }
 
-.reviews__comments {
+.lifehacks__comments {
   display: inline-block;
   margin-right: 20px;
-  margin-left: 20px;
-  opacity: .35;
 
   &--count {
     font-size: 12px;

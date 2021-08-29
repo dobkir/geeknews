@@ -11,7 +11,7 @@
   width: $main-width;
   display: grid;
   grid-template-columns: auto repeat(12, 1fr) auto;
-  grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 422px 422px 328px 328px 170px;
+  grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 90px 322px 322px 322px 328px 170px;
   grid-template-areas:
     ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ."
     ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ."
@@ -20,6 +20,7 @@
     ". it-news-top-left it-news-top-left it-news-top-left it-news-top-left it-news-top-right it-news-top-right it-news-top-right it-news-top-right social social social social ."
     ". it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-right it-news-bottom-right it-news-bottom-right it-news-bottom-right ad-unit-2 ad-unit-2 ad-unit-2 ad-unit-2 ."
     "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews"
+    ". lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ."
     ". lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-right lifehacks-top-right lifehacks-top-right lifehacks-top-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ."
     ". lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ."
     ". diy-hot diy-hot diy-hot diy-hot diy-top diy-top diy-top diy-top diy-top diy-top diy-top diy-top ."
@@ -126,20 +127,42 @@
   }
 }
 
+.lifehacks {
+
+  &__title {
+    grid-area: lifehacks-title;
+    margin: 1.8rem auto 0 0;
+
+    text-align: left;
+  }
+}
+
 .lifehacks__top--left {
   grid-area: lifehacks-top-left;
+
+
+  position: relative;
 }
 
 .lifehacks__top--right {
   grid-area: lifehacks-top-right;
+
+
+  position: relative;
 }
 
 .lifehacks__bottom--left {
   grid-area: lifehacks-bottom-left;
+
+
+  position: relative;
 }
 
 .lifehacks__bottom--right {
   grid-area: lifehacks-bottom-right;
+
+
+  position: relative;
 }
 
 .diy__hot {
@@ -170,4 +193,7 @@
 
 .ad__unit--3 {
   grid-area: ad-unit-3;
+
+  margin-top: auto;
+  margin-left: auto;
 }

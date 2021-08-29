@@ -87,7 +87,7 @@ title: GeekTop News | Home
   {{#if second_news}}
   {{> it_elem second_news}}
   {{else}}
-  <p>ID second news folder is empty</p>
+  <p>IT second news folder is empty</p>
   {{/if}}
 </section>
 <!-- /.it-news-top-right -->
@@ -96,7 +96,7 @@ title: GeekTop News | Home
   {{#if third_news}}
   {{> it_elem third_news}}
   {{else}}
-  <p>ID third news folder is empty</p>
+  <p>IT third news folder is empty</p>
   {{/if}}
 </section>
 <!-- /.it-news-bottom-left -->
@@ -105,7 +105,7 @@ title: GeekTop News | Home
   {{#if fourth_news}}
   {{> it_elem fourth_news}}
   {{else}}
-  <p>ID fourth news folder is empty</p>
+  <p>IT fourth news folder is empty</p>
   {{/if}}
 </section>
 <!-- /.it-news-bottom-right -->
@@ -139,26 +139,26 @@ title: GeekTop News | Home
     {{#with reviews}}
 
     <div class="reviews__carousel">
-      {{#if first_news}}
-      {{> reviews_elem first_news}}
+      {{#if first_review}}
+      {{> reviews_elem first_review}}
       {{else}}
       <p>Reviews first folder is empty</p>
       {{/if}}
 
-      {{#if second_news}}
-      {{> reviews_elem second_news}}
+      {{#if second_review}}
+      {{> reviews_elem second_review}}
       {{else}}
       <p>Reviews second folder is empty</p>
       {{/if}}
 
-      {{#if third_news}}
-      {{> reviews_elem third_news}}
+      {{#if third_review}}
+      {{> reviews_elem third_review}}
       {{else}}
       <p>Reviews third folder is empty</p>
       {{/if}}
 
-      {{#if fourth_news}}
-      {{> reviews_elem fourth_news}}
+      {{#if fourth_review}}
+      {{> reviews_elem fourth_review}}
       {{else}}
       <p>Reviews fourth folder is empty</p>
       {{/if}}
@@ -177,25 +177,55 @@ title: GeekTop News | Home
 
 <!-------------------- Lifehacks -------------------->
 
+<h2 class="lifehacks__title">
+  <a class="section__title" href="#">
+    Лайфхаки
+  </a>
+</h2>
+
+{{! Data is retrieved from src.data}}
+{{#with lifehacks}}
 <section class="lifehacks__top--left">
-  lifehacks-top-left
+  {{#if first_lifehack}}
+  {{> lifehacks_elem first_lifehack}}
+  {{else}}
+  <p>Lifehacks first lifehack folder is empty</p>
+  {{/if}}
 </section>
 <!-- /.lifehacks-top-left -->
 
 <section class="lifehacks__top--right">
-  lifehacks-top-right
+  {{#if second_lifehack}}
+  {{> lifehacks_elem second_lifehack}}
+  {{else}}
+  <p>Lifehacks second lifehack folder is empty</p>
+  {{/if}}
 </section>
 <!-- /.lifehacks-top-right -->
 
 <section class="lifehacks__bottom--left">
-  lifehacks-bottom-left
+  {{#if third_lifehack}}
+  {{> lifehacks_elem third_lifehack}}
+  {{else}}
+  <p>Lifehacks third lifehack folder is empty</p>
+  {{/if}}
 </section>
 <!-- /.lifehacks-bottom-left -->
 
 <section class="lifehacks__bottom--right">
-  lifehacks-bottom-right
+  {{#if fourth_lifehack}}
+  {{> lifehacks_elem fourth_lifehack}}
+  {{else}}
+  <p>Lifehacks fourth lifehack folder is empty</p>
+  {{/if}}
 </section>
 <!-- /.lifehacks-bottom-right -->
+{{/with}}
+
+<div class="ad__unit--3">
+  <img src="assets/images/adVertic.jpg" width="334px" height="668px" alt="image: ad unit" class="img__responsive">
+</div>
+<!-- /.ad-unit-3 -->
 
 <!-------------------- /Lifehacks -------------------->
 
@@ -224,8 +254,3 @@ title: GeekTop News | Home
   more
 </div>
 <!-- /.more -->
-
-<div class="ad__unit--3">
-  ad-unit-3
-</div>
-<!-- /.ad-unit-3 -->
