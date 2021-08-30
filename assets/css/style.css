@@ -9792,6 +9792,40 @@ a:hover, a:focus {
     font-size: 12px;
 }
 
+.button {
+    display: inline-block;
+    border: none;
+    color: #fafafa;
+    text-decoration: none;
+    background-color: #ec1c1c;
+    padding: 12px 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 10em;
+    text-align: center;
+    position: relative;
+    outline: 0;
+    cursor: pointer;
+    transition: background-color .1s ease;
+}
+
+.button:hover,
+.button:focus {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+.button:hover {
+    background-color: #f04b4b;
+    color: #ededed;
+}
+
+.button:active {
+    background-color: #c51010;
+    color: #e1e1e1;
+}
+
 .date {
     display: block;
     margin-top: .56rem;
@@ -9813,8 +9847,8 @@ a:hover, a:focus {
     width: 1141px;
     display: grid;
     grid-template-columns: auto repeat(12, 1fr) auto;
-    grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 90px 322px 322px 220px 266px 266px 170px;
-    grid-template-areas: ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ." ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ." ". electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right electronics-bottom-right electronics-bottom-right ." ". it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title social social social social ." ". it-news-top-left it-news-top-left it-news-top-left it-news-top-left it-news-top-right it-news-top-right it-news-top-right it-news-top-right social social social social ." ". it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-right it-news-bottom-right it-news-bottom-right it-news-bottom-right ad-unit-2 ad-unit-2 ad-unit-2 ad-unit-2 ." "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews" ". lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-right lifehacks-top-right lifehacks-top-right lifehacks-top-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title ." ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-top diy-top diy-top diy-top diy-top ." ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ." ". more more more more more more more more more more more more .";
+    grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 90px 322px 322px 220px 266px 266px 150px;
+    grid-template-areas: ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ." ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ." ". electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right electronics-bottom-right electronics-bottom-right ." ". it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title social social social social ." ". it-news-top-left it-news-top-left it-news-top-left it-news-top-left it-news-top-right it-news-top-right it-news-top-right it-news-top-right social social social social ." ". it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-right it-news-bottom-right it-news-bottom-right it-news-bottom-right ad-unit-2 ad-unit-2 ad-unit-2 ad-unit-2 ." "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews" ". lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-right lifehacks-top-right lifehacks-top-right lifehacks-top-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title ." ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-top diy-top diy-top diy-top diy-top ." ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ." "more more more more more more more more more more more more more more";
     -ms-flex-align: center;
     align-items: center;
 }
@@ -9882,8 +9916,7 @@ a:hover, a:focus {
 
 .reviews {
     grid-area: reviews;
-    margin-left: -100%;
-    margin-right: -100%;
+    margin: 0 -100%;
     min-height: 100%;
     min-width: 100vw;
     color: #fafafa;
@@ -9972,6 +10005,17 @@ a:hover, a:focus {
 
 .more {
     grid-area: more;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100vw;
+    height: 150px;
+    margin: 0 -33.3%;
+    background-color: #f5f5f5;
+    text-align: center;
 }
 
 .ad__unit--1 {
