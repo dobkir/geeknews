@@ -11,7 +11,7 @@
   width: $main-width;
   display: grid;
   grid-template-columns: auto repeat(12, 1fr) auto;
-  grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 90px 322px 322px 322px 328px 170px;
+  grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 90px 322px 322px 220px 266px 266px 170px;
   grid-template-areas:
     ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ."
     ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ."
@@ -23,8 +23,9 @@
     ". lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ."
     ". lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-right lifehacks-top-right lifehacks-top-right lifehacks-top-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ."
     ". lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ."
-    ". diy-hot diy-hot diy-hot diy-hot diy-top diy-top diy-top diy-top diy-top diy-top diy-top diy-top ."
-    ". diy-hot diy-hot diy-hot diy-hot diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ."
+    ". diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title ."
+    ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-top diy-top diy-top diy-top diy-top ."
+    ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ."
     ". more more more more more more more more more more more more .";
   align-items: center;
 }
@@ -135,38 +136,65 @@
 
     text-align: left;
   }
+
+  &__top--left {
+    grid-area: lifehacks-top-left;
+    position: relative;
+  }
+
+  &__top--right {
+    grid-area: lifehacks-top-right;
+    position: relative;
+  }
+
+  &__bottom--left {
+    grid-area: lifehacks-bottom-left;
+    position: relative;
+  }
+
+  &__bottom--right {
+    grid-area: lifehacks-bottom-right;
+    position: relative;
+  }
 }
 
-.lifehacks__top--left {
-  grid-area: lifehacks-top-left;
-  position: relative;
-}
+.diy {
 
-.lifehacks__top--right {
-  grid-area: lifehacks-top-right;
-  position: relative;
-}
+  &__title {
+    grid-area: diy-title;
+    margin: 1.8rem auto 3.8rem 0;
 
-.lifehacks__bottom--left {
-  grid-area: lifehacks-bottom-left;
-  position: relative;
-}
+    text-align: left;
 
-.lifehacks__bottom--right {
-  grid-area: lifehacks-bottom-right;
-  position: relative;
-}
+    &::before {
+      content: " ";
+      display: block;
+      margin-left: -100%;
+      margin-right: -100%;
+      margin-top: 5.56rem;
+      margin-bottom: 2.78rem;
+      min-height: 1px;
+      min-width: 100vw;
+      background-color: $white-1;
+    }
+  }
 
-.diy__hot {
-  grid-area: diy-hot;
-}
+  &__main {
+    grid-area: diy-main;
+    position: relative;
+  }
 
-.diy__top {
-  grid-area: diy-top;
-}
+  &__top {
+    grid-area: diy-top;
+    margin-left: auto;
+    position: relative;
+  }
 
-.diy__bottom {
-  grid-area: diy-bottom;
+  &__bottom {
+    grid-area: diy-bottom;
+    margin-left: auto;
+    position: relative;
+  }
 }
 
 .more {

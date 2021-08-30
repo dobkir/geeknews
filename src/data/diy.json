@@ -1,0 +1,26 @@
+{
+  "first_article": {
+  "heading": "Как создать красивое освещение в виде шариков в своём доме",
+  "image": "assets/images/blog/diy/1.jpg",
+  "comments_counter": "46",
+  "date": "25/08/2021",
+  "width": "653px",
+  "height": "380px"
+  },
+  "second_article": {
+  "heading": "Красивая аутентичная буква А на стол своими руками",
+  "image": "assets/images/blog/diy/2.jpg",
+  "comments_counter": "31",
+  "date": "12/08/2021",
+  "width": "459px",
+  "height": "236px"
+  },
+  "third_article": {
+  "heading": "Самодельные деревянные винты увеличенной площади для квадрокоптера",
+  "image": "assets/images/blog/diy/3.jpg",
+  "comments_counter": "25",
+  "date": "24/07/2021",
+  "width": "459px",
+  "height": "236px"
+  }
+}

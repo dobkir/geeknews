@@ -2,10 +2,9 @@
 
   &--title {
     margin: 0;
+
+    font: normal 800 1rem/1.25rem roboto-g;
     text-transform: uppercase;
-    font-weight: 800;
-    line-height: 1.25;
-    font-size: 1rem;
   }
 
   &--title__link {

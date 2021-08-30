@@ -1,0 +1,26 @@
+{{#if heading}}
+
+<a href="#" class="diy__link">
+  <img src={{image}} alt="image: {{heading}}" width={{width}} height={{height}}>
+</a>
+
+<div class="diy__link--content">
+  <h3 class="diy__link--title">
+    <a class="diy__link--title__link" href="#">
+      {{heading}}
+    </a>
+  </h3>
+
+  <div class="diy__social">
+    <div class="diy__comments" title="Количество комментариев">
+      <i class="fa fa-comments"></i>
+      <a href="#disqus_thread" class="item__comments--count">{{comments_counter}}</a>
+    </div>
+    <span class="date">{{date}}</span>
+  </div>
+
+</div>
+
+{{else}}
+<p>Heading of this article is lost</p>
+{{/if}}
