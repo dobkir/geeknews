@@ -33,14 +33,14 @@ const path = {
         fonts: distPath + "assets/fonts/"
     },
     src: {
-        html: srcPath + "*.html",
+        html: srcPath + "*.{html,hbs,handlebars}",
         js: srcPath + "assets/js/*.js",
         css: srcPath + "assets/scss/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     watch: {
-        html: srcPath + "**/*.html",
+        html: srcPath + "**/*.{html,hbs,handlebars}",
         js: srcPath + "assets/js/**/*.js",
         css: srcPath + "assets/scss/**/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
@@ -48,8 +48,6 @@ const path = {
     },
     clean: "./" + distPath
 }
-
-
 
 /* Tasks */
 
@@ -244,8 +242,6 @@ function watchFiles() {
 
 const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
-
-
 
 /* Exports Tasks */
 exports.html = html;
