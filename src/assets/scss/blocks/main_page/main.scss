@@ -11,7 +11,7 @@
   width: $main-width;
   display: grid;
   grid-template-columns: auto repeat(12, 1fr) auto;
-  grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 90px 322px 322px 220px 266px 266px 170px;
+  grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 90px 322px 322px 220px 266px 266px 150px;
   grid-template-areas:
     ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ."
     ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ."
@@ -26,7 +26,7 @@
     ". diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title ."
     ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-top diy-top diy-top diy-top diy-top ."
     ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ."
-    ". more more more more more more more more more more more more .";
+    "more more more more more more more more more more more more more more";
   align-items: center;
 }
 
@@ -100,8 +100,7 @@
 
 .reviews {
   grid-area: reviews;
-  margin-left: -100%;
-  margin-right: -100%;
+  margin: 0 -100%;
   min-height: 100%;
   min-width: 100vw;
 
@@ -199,6 +198,16 @@
 
 .more {
   grid-area: more;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 150px;
+  margin: 0 -33.3%;
+
+  background-color: $white-1;
+
+  text-align: center;
 }
 
 .ad__unit--1 {
