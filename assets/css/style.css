@@ -9735,7 +9735,7 @@ a:hover, a:focus {
 
 .social {
     grid-area: social;
-    margin: 1rem 0 0 auto;
+    margin: 2rem 0 0 auto;
 }
 
 .item__social {
@@ -9844,11 +9844,10 @@ a:hover, a:focus {
 }
 
 .main__container {
-    width: 1141px;
     display: grid;
-    grid-template-columns: auto repeat(12, 1fr) auto;
-    grid-template-rows: 130px 350px 350px 78px 285px 285px 420px 90px 322px 322px 220px 266px 266px 150px;
-    grid-template-areas: ". ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ad-unit-1 ." ". electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right electronics-top-right ." ". electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right electronics-bottom-right electronics-bottom-right ." ". it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title it-news-title social social social social ." ". it-news-top-left it-news-top-left it-news-top-left it-news-top-left it-news-top-right it-news-top-right it-news-top-right it-news-top-right social social social social ." ". it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-left it-news-bottom-right it-news-bottom-right it-news-bottom-right it-news-bottom-right ad-unit-2 ad-unit-2 ad-unit-2 ad-unit-2 ." "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews" ". lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title lifehacks-title ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-left lifehacks-top-right lifehacks-top-right lifehacks-top-right lifehacks-top-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-left lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right lifehacks-bottom-right ad-unit-3 ad-unit-3 ad-unit-3 ad-unit-3 ." ". diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title diy-title ." ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-top diy-top diy-top diy-top diy-top ." ". diy-main diy-main diy-main diy-main diy-main diy-main diy-main diy-bottom diy-bottom diy-bottom diy-bottom diy-bottom ." "more more more more more more more more more more more more more more";
+    grid-template-columns: auto 1141px auto;
+    grid-template-rows: 130px 700px 648px 420px 744px 752px 150px;
+    grid-template-areas: ". ad-unit-1 ." ". electronics ." ". it-news ." "reviews reviews reviews" ". lifehacks ." ". diy ." ". more .";
     -ms-flex-align: center;
     align-items: center;
 }
@@ -9862,6 +9861,30 @@ a:hover, a:focus {
 
 .section__title:hover, .section__title:focus {
     color: #f69292;
+}
+
+.ad__unit--1 {
+    grid-area: ad-unit-1;
+}
+
+.ad__unit--2 {
+    grid-area: ad-unit-2;
+    margin-bottom: 25px;
+    margin-left: auto;
+}
+
+.ad__unit--3 {
+    grid-area: ad-unit-3;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.electronics {
+    grid-area: electronics;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right" "electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right";
 }
 
 .electronics__top--left {
@@ -9887,151 +9910,6 @@ a:hover, a:focus {
 .electronics__bottom--right {
     grid-area: electronics-bottom-right;
     position: relative;
-}
-
-.it-news__title {
-    grid-area: it-news-title;
-    margin: 2.4rem auto 0 0;
-}
-
-.it-news__top--left {
-    grid-area: it-news-top-left;
-}
-
-.it-news__top--right {
-    grid-area: it-news-top-right;
-    margin-left: .56rem;
-}
-
-.it-news__bottom--left {
-    grid-area: it-news-bottom-left;
-    margin-bottom: 2.5rem;
-}
-
-.it-news__bottom--right {
-    grid-area: it-news-bottom-right;
-    margin-left: .56rem;
-    margin-bottom: 2.5rem;
-}
-
-.reviews {
-    grid-area: reviews;
-    margin: 0 -100%;
-    min-height: 100%;
-    min-width: 100vw;
-    color: #fafafa;
-    background-color: #1c2026;
-    position: relative;
-}
-
-.reviews__container {
-    margin: 0 auto;
-    height: 100%;
-    width: 1141px;
-}
-
-.reviews__title {
-    margin: 3.5rem auto 0 0;
-    text-align: left;
-}
-
-.reviews__carousel {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.lifehacks__title {
-    grid-area: lifehacks-title;
-    margin: 1.8rem auto 0 0;
-    text-align: left;
-}
-
-.lifehacks__top--left {
-    grid-area: lifehacks-top-left;
-    position: relative;
-}
-
-.lifehacks__top--right {
-    grid-area: lifehacks-top-right;
-    position: relative;
-}
-
-.lifehacks__bottom--left {
-    grid-area: lifehacks-bottom-left;
-    position: relative;
-}
-
-.lifehacks__bottom--right {
-    grid-area: lifehacks-bottom-right;
-    position: relative;
-}
-
-.diy__title {
-    grid-area: diy-title;
-    margin: 1.8rem auto 3.8rem 0;
-    text-align: left;
-}
-
-.diy__title::before {
-    content: " ";
-    display: block;
-    margin-left: -100%;
-    margin-right: -100%;
-    margin-top: 5.56rem;
-    margin-bottom: 2.78rem;
-    min-height: 1px;
-    min-width: 100vw;
-    background-color: #f5f5f5;
-}
-
-.diy__main {
-    grid-area: diy-main;
-    position: relative;
-}
-
-.diy__top {
-    grid-area: diy-top;
-    margin-left: auto;
-    position: relative;
-}
-
-.diy__bottom {
-    grid-area: diy-bottom;
-    margin-left: auto;
-    position: relative;
-}
-
-.more {
-    grid-area: more;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 100vw;
-    height: 150px;
-    margin: 0 -33.3%;
-    background-color: #f5f5f5;
-    text-align: center;
-}
-
-.ad__unit--1 {
-    grid-area: ad-unit-1;
-}
-
-.ad__unit--2 {
-    grid-area: ad-unit-2;
-    margin-bottom: 25px;
-    margin-left: auto;
-}
-
-.ad__unit--3 {
-    grid-area: ad-unit-3;
-    margin-top: auto;
-    margin-left: auto;
 }
 
 .electronics__link--title {
@@ -10102,6 +9980,38 @@ a:hover, a:focus {
     opacity: .2;
 }
 
+.it-news {
+    grid-area: it-news;
+    display: grid;
+    grid-template: 98px 1fr 1fr / 1fr 1fr 361px;
+    grid-template-areas: "it-news-title it-news-title social" "it-news-top-left it-news-top-right social" "it-news-bottom-left it-news-bottom-right social";
+    grid-gap: 0 30px;
+    justify-items: start;
+    -ms-flex-align: start;
+    align-items: start;
+}
+
+.it-news__title {
+    grid-area: it-news-title;
+    margin: 2.4rem auto 0 0;
+}
+
+.it-news__top--left {
+    grid-area: it-news-top-left;
+}
+
+.it-news__top--right {
+    grid-area: it-news-top-right;
+}
+
+.it-news__bottom--left {
+    grid-area: it-news-bottom-left;
+}
+
+.it-news__bottom--right {
+    grid-area: it-news-bottom-right;
+}
+
 .it-news__section {
     width: 361px;
     height: 234px;
@@ -10165,6 +10075,34 @@ a:hover, a:focus {
 
 .it-news__link:hover::after, .it-news__link:focus::after {
     opacity: .2;
+}
+
+.reviews {
+    grid-area: reviews;
+    margin: 0 -100%;
+    min-height: 100%;
+    min-width: 100vw;
+    color: #fafafa;
+    background-color: #1c2026;
+    position: relative;
+}
+
+.reviews__container {
+    margin: 0 auto;
+    height: 100%;
+    width: 1141px;
+}
+
+.reviews__title {
+    margin: 3.5rem auto 0 0;
+    text-align: left;
+}
+
+.reviews__carousel {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .reviews__section {
@@ -10277,6 +10215,39 @@ a:hover, a:focus {
     position: absolute;
 }
 
+.lifehacks {
+    grid-area: lifehacks;
+    display: grid;
+    grid-template: 90px 1fr 1fr / 1fr 1fr 1fr;
+    grid-template-areas: "lifehacks-title lifehacks-title ad-unit-3" "lifehacks-top-left lifehacks-top-right ad-unit-3" "lifehacks-bottom-left lifehacks-bottom-right ad-unit-3";
+}
+
+.lifehacks__title {
+    grid-area: lifehacks-title;
+    margin: 2.2rem auto 0 0;
+    text-align: left;
+}
+
+.lifehacks__top--left {
+    grid-area: lifehacks-top-left;
+    position: relative;
+}
+
+.lifehacks__top--right {
+    grid-area: lifehacks-top-right;
+    position: relative;
+}
+
+.lifehacks__bottom--left {
+    grid-area: lifehacks-bottom-left;
+    position: relative;
+}
+
+.lifehacks__bottom--right {
+    grid-area: lifehacks-bottom-right;
+    position: relative;
+}
+
 .lifehacks__link--title {
     margin: 0;
     font: normal 800 1rem/1.25rem roboto-g;
@@ -10373,6 +10344,51 @@ a:hover, a:focus {
     top: 35%;
     margin-left: -35px;
     position: absolute;
+}
+
+.diy {
+    grid-area: diy;
+    display: grid;
+    grid-template: 180px 1fr 1fr / 2fr 1fr;
+    grid-template-areas: "diy-title diy-title" "diy-main diy-top" "diy-main diy-bottom";
+    -ms-flex-align: start;
+    align-items: start;
+    row-gap: 30px;
+}
+
+.diy__title {
+    grid-area: diy-title;
+    margin: 1.8rem auto 0 0;
+    text-align: left;
+}
+
+.diy__title::before {
+    content: " ";
+    display: block;
+    margin-left: -100%;
+    margin-right: -100%;
+    margin-top: 2.56rem;
+    margin-bottom: 2.78rem;
+    min-height: 1px;
+    min-width: 100vw;
+    background-color: #f5f5f5;
+}
+
+.diy__main {
+    grid-area: diy-main;
+    position: relative;
+}
+
+.diy__top {
+    grid-area: diy-top;
+    margin-left: auto;
+    position: relative;
+}
+
+.diy__bottom {
+    grid-area: diy-bottom;
+    margin-left: auto;
+    position: relative;
 }
 
 .diy__main__section {
@@ -10547,6 +10563,21 @@ a:hover, a:focus {
     font-size: 5px;
     position: absolute;
     top: 35%;
+}
+
+.more {
+    grid-area: more;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100vw;
+    height: 150px;
+    margin: 0 -33.3%;
+    background-color: #f5f5f5;
+    text-align: center;
 }
 
 .footer {
