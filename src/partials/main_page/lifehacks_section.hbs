@@ -1,0 +1,44 @@
+<h2 class="lifehacks__title">
+  <a class="section__title" href="#">
+    Лайфхаки
+  </a>
+</h2>
+
+{{! Data is retrieved from src.data}}
+{{#with lifehacks}}
+<section class="lifehacks__top--left">
+  {{#if first_lifehack}}
+  {{> lifehacks_elem first_lifehack}}
+  {{else}}
+  <p>Lifehacks first lifehack folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.lifehacks-top-left -->
+
+<section class="lifehacks__top--right">
+  {{#if second_lifehack}}
+  {{> lifehacks_elem second_lifehack}}
+  {{else}}
+  <p>Lifehacks second lifehack folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.lifehacks-top-right -->
+
+<section class="lifehacks__bottom--left">
+  {{#if third_lifehack}}
+  {{> lifehacks_elem third_lifehack}}
+  {{else}}
+  <p>Lifehacks third lifehack folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.lifehacks-bottom-left -->
+
+<section class="lifehacks__bottom--right">
+  {{#if fourth_lifehack}}
+  {{> lifehacks_elem fourth_lifehack}}
+  {{else}}
+  <p>Lifehacks fourth lifehack folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.lifehacks-bottom-right -->
+{{/with}}

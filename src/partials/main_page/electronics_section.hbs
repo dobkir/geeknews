@@ -1,0 +1,47 @@
+{{! Data is retrieved from src.data}}
+{{#with electronics_news}}
+<section class="electronics__top--left">
+  {{#if first_news}}
+  {{> electronics_elem first_news}}
+  {{else}}
+  <p>Electronics first news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.electronics-top-left -->
+
+<section class="electronics__top--right">
+  {{#if second_news}}
+  {{> electronics_elem second_news}}
+  {{else}}
+  <p>Electronics second news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.electronics-top-right -->
+
+<section class="electronics__bottom--left">
+  {{#if third_news}}
+  {{> electronics_elem third_news}}
+  {{else}}
+  <p>Electronics third news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.electronics-bottom-left -->
+
+<section class="electronics__bottom--center">
+  {{#if fourth_news}}
+  {{> electronics_elem fourth_news}}
+  {{else}}
+  <p>Electronics fourth news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.electronics-bottom-center -->
+
+<section class="electronics__bottom--right">
+  {{#if fifth_news}}
+  {{> electronics_elem fifth_news}}
+  {{else}}
+  <p>Electronics fifth news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.electronics-bottom-right -->
+{{/with}}

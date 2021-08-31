@@ -1,0 +1,13 @@
+.more {
+  grid-area: more;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 150px;
+  margin: 0 -33.3%;
+
+  background-color: $white-1;
+
+  text-align: center;
+}

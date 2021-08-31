@@ -1,3 +1,39 @@
+.lifehacks {
+  grid-area: lifehacks;
+  display: grid;
+  grid-template: 90px 1fr 1fr / 1fr 1fr 1fr;
+  grid-template-areas: "lifehacks-title lifehacks-title ad-unit-3"
+    "lifehacks-top-left lifehacks-top-right ad-unit-3"
+    "lifehacks-bottom-left lifehacks-bottom-right ad-unit-3";
+
+  &__title {
+    grid-area: lifehacks-title;
+    margin: 2.2rem auto 0 0;
+
+    text-align: left;
+  }
+
+  &__top--left {
+    grid-area: lifehacks-top-left;
+    position: relative;
+  }
+
+  &__top--right {
+    grid-area: lifehacks-top-right;
+    position: relative;
+  }
+
+  &__bottom--left {
+    grid-area: lifehacks-bottom-left;
+    position: relative;
+  }
+
+  &__bottom--right {
+    grid-area: lifehacks-bottom-right;
+    position: relative;
+  }
+}
+
 .lifehacks__link {
 
   &--title {

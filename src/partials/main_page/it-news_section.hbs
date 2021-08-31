@@ -1,0 +1,44 @@
+<h2 class="it-news__title">
+  <a class="section__title" href="#">
+    Новости IT
+  </a>
+</h2>
+
+{{! Data is retrieved from src.data}}
+{{#with it_news}}
+<section class="it-news__top--left">
+  {{#if first_news}}
+  {{> it_elem first_news}}
+  {{else}}
+  <p>IT first news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.it-news-top-left -->
+
+<section class="it-news__top--right">
+  {{#if second_news}}
+  {{> it_elem second_news}}
+  {{else}}
+  <p>IT second news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.it-news-top-right -->
+
+<section class="it-news__bottom--left">
+  {{#if third_news}}
+  {{> it_elem third_news}}
+  {{else}}
+  <p>IT third news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.it-news-bottom-left -->
+
+<section class="it-news__bottom--right">
+  {{#if fourth_news}}
+  {{> it_elem fourth_news}}
+  {{else}}
+  <p>IT fourth news folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.it-news-bottom-right -->
+{{/with}}

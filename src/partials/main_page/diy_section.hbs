@@ -1,0 +1,35 @@
+<h2 class="diy__title">
+  <a class="section__title" href="#">
+    DIY
+  </a>
+</h2>
+
+{{! Data is retrieved from src.data}}
+{{#with diy}}
+<section class="diy__main">
+  {{#if first_article}}
+  {{> diy_main_elem first_article}}
+  {{else}}
+  <p>DIY first_article folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.diy-main -->
+
+<section class="diy__top">
+  {{#if second_article}}
+  {{> diy_secondary_elem second_article}}
+  {{else}}
+  <p>DIY second article folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.diy-top -->
+
+<section class="diy__bottom">
+  {{#if third_article}}
+  {{> diy_secondary_elem third_article}}
+  {{else}}
+  <p>DIY third article folder is empty</p>
+  {{/if}}
+</section>
+<!-- /.diy-bottom -->
+{{/with}}

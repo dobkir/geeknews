@@ -1,0 +1,40 @@
+<div class="reviews__container">
+  <h2 class="reviews__title">
+    <a class="section__title color--white" href="#">
+      Обзоры
+    </a>
+  </h2>
+
+  {{! Data is retrieved from src.data}}
+  {{#with reviews}}
+
+  <div class="reviews__carousel">
+    {{#if first_review}}
+    {{> reviews_elem first_review}}
+    {{else}}
+    <p>Reviews first folder is empty</p>
+    {{/if}}
+
+    {{#if second_review}}
+    {{> reviews_elem second_review}}
+    {{else}}
+    <p>Reviews second folder is empty</p>
+    {{/if}}
+
+    {{#if third_review}}
+    {{> reviews_elem third_review}}
+    {{else}}
+    <p>Reviews third folder is empty</p>
+    {{/if}}
+
+    {{#if fourth_review}}
+    {{> reviews_elem fourth_review}}
+    {{else}}
+    <p>Reviews fourth folder is empty</p>
+    {{/if}}
+  </div>
+  <!-- /.reviews__carousel -->
+  {{/with}}
+
+</div>
+<!-- /.reviews__container -->

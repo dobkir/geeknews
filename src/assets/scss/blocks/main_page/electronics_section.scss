@@ -1,3 +1,39 @@
+.electronics {
+  grid-area: electronics;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right"
+    "electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right";
+
+  &__top--left {
+    grid-area: electronics-top-left;
+    position: relative;
+  }
+
+  &__top--right {
+    grid-area: electronics-top-right;
+    position: relative;
+  }
+
+  &__bottom--left {
+    grid-area: electronics-bottom-left;
+    position: relative;
+  }
+
+  &__bottom--center {
+    grid-area: electronics-bottom-center;
+    position: relative;
+  }
+
+  &__bottom--right {
+    grid-area: electronics-bottom-right;
+    position: relative;
+  }
+}
+
+
 .electronics__link {
 
   &--title {
