@@ -1,47 +1,131 @@
 .diy {
   grid-area: diy;
   display: grid;
-  grid-template: 180px 1fr 1fr / 2fr 1fr;
-  grid-template-areas: "diy-title diy-title"
+  grid-template: .3fr 1fr 1fr / 2fr 1fr;
+  grid-template-areas:
+    "diy-title diy-title"
     "diy-main diy-top"
     "diy-main diy-bottom";
   align-items: start;
+
   row-gap: 30px;
+
+  @media screen and (max-width: 1141px) {
+    grid-template: .3fr 1.27fr 1fr 1fr / 1fr;
+    grid-template-areas:
+      "diy-title"
+      "diy-main"
+      "diy-top"
+      "diy-bottom";
+    row-gap: 10px;
+    justify-items: center;
+  }
+
+  @media screen and (max-width: 649px) {
+    grid-template: .3fr 1.5fr 1fr 1fr / 1fr;
+    grid-template-areas:
+      "diy-title"
+      "diy-main"
+      "diy-top"
+      "diy-bottom";
+    row-gap: 10px;
+    justify-items: center;
+  }
 
   &__title {
     grid-area: diy-title;
-    margin: 1.8rem auto 0 0;
 
     text-align: left;
 
-    &::before {
-      content: " ";
-      display: block;
-      margin-left: -100%;
-      margin-right: -100%;
-      margin-top: 2.56rem;
-      margin-bottom: 2.78rem;
-      min-height: 1px;
-      min-width: 100vw;
-      background-color: $white-1;
+    @media screen and (max-width: 1141px) {
+      text-align: center;
+    }
+
+    .hr__line {
+      display: flex;
+      justify-content: center;
+
+      &::before {
+        content: " ";
+        display: block;
+        margin-bottom: 1.67rem;
+        min-height: 1px;
+        min-width: 100vw;
+
+        background-color: $white-1;
+      }
     }
   }
 
   &__main {
     grid-area: diy-main;
     position: relative;
+
+    &--content {
+      text-align: left;
+      color: $white;
+
+      padding: 0 20% 2% 0;
+
+      left: 0;
+      bottom: 0;
+
+      z-index: 1;
+
+      @media screen and (max-width: 419px) {
+        padding: 0 10% 2% 0;
+      }
+    }
+
+    &--title {
+      margin-top: 1rem;
+
+      font: normal 800 1.28rem/1.61rem roboto-g;
+
+      @media screen and (max-width: 1141px) {
+        font: normal 800 1.4rem/2rem roboto-g;
+      }
+
+      @media screen and (max-width: 649px) {
+        font: normal 800 1.28rem/1.61rem roboto-g;
+      }
+
+      @media screen and (max-width: 419px) {
+        font: normal 800 1rem/1.25rem roboto-g;
+      }
+    }
+
+    &--title__link {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+
+      text-decoration: none;
+      text-overflow: ellipsis;
+      color: $textcolor;
+
+      overflow: hidden;
+
+      cursor: pointer;
+    }
   }
 
   &__top {
     grid-area: diy-top;
-    margin-left: auto;
-    position: relative;
   }
 
   &__bottom {
     grid-area: diy-bottom;
+  }
+
+  &__top,
+  &__bottom {
     margin-left: auto;
     position: relative;
+
+    @media screen and (max-width: 1141px) {
+      margin-right: auto;
+    }
   }
 }
 
@@ -50,45 +134,17 @@
   height: 500px;
 
   position: relative;
+
+  @media screen and (max-width: 1141px) {
+    width: 90vw;
+    height: auto;
+  }
 }
 
 .diy__main__link {
-
-  &--title {
-    margin-top: 1rem;
-
-    font: normal 800 1.28rem/1.61rem roboto-g;
-  }
-
-  &--title__link {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-
-    text-decoration: none;
-    text-overflow: ellipsis;
-    color: $textcolor;
-
-    overflow: hidden;
-
-    cursor: pointer;
-  }
-
-  &--content {
-    text-align: left;
-    color: $white;
-
-    padding: 0 20% 2% 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    z-index: 1;
-  }
+  position: relative;
 
   &::before {
-    width: 653px;
-    height: 380px;
     content: '';
 
     background-color: $dark;
@@ -106,8 +162,6 @@
   }
 
   &::after {
-    width: 633px;
-    height: 360px;
     content: '';
 
     background-color: $dark;
@@ -137,14 +191,27 @@
 }
 
 .diy__link {
-  width: 100%;
-  height: 100%;
+  width: 459px;
+  height: 236px;
+
+  @media screen and (max-width: 1141px) {
+    width: 90vw;
+    height: auto;
+  }
 
   &--title {
     margin: 0;
 
     font: normal 800 1rem/1.25rem roboto-g;
     text-transform: uppercase;
+
+    @media screen and (max-width: 1141px) {
+      font: normal 800 1.2rem/1.6rem roboto-g;
+    }
+
+    @media screen and (max-width: 419px) {
+      font: normal 800 .8rem/1.15rem roboto-g;
+    }
   }
 
   &--title__link {
@@ -159,6 +226,10 @@
     overflow: hidden;
 
     cursor: pointer;
+
+    @media screen and (max-width: 419px) {
+      -webkit-line-clamp: 2;
+    }
   }
 
   &--content {
@@ -172,6 +243,10 @@
     bottom: 0;
 
     z-index: 1;
+
+    @media screen and (max-width: 419px) {
+      padding: 20px;
+    }
   }
 
 

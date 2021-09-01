@@ -1,10 +1,41 @@
 .lifehacks {
   grid-area: lifehacks;
   display: grid;
-  grid-template: 90px 1fr 1fr / 1fr 1fr 1fr;
-  grid-template-areas: "lifehacks-title lifehacks-title ad-unit-3"
+  grid-template: .4fr 1fr 1fr / 1fr 1fr 1fr;
+  grid-template-areas:
+    "lifehacks-title lifehacks-title ad-unit-3"
     "lifehacks-top-left lifehacks-top-right ad-unit-3"
     "lifehacks-bottom-left lifehacks-bottom-right ad-unit-3";
+
+  @media screen and (max-width: 1141px) {
+    grid-template: .25fr 1fr 1fr 2fr / 1fr 1fr;
+    grid-template-areas:
+      "lifehacks-title lifehacks-title"
+      "lifehacks-top-left lifehacks-top-right"
+      "lifehacks-bottom-left lifehacks-bottom-right"
+      "ad-unit-3 ad-unit-3";
+    justify-items: center;
+  }
+
+  @media screen and (max-width: 991px) {
+    grid-template: .25fr 1fr 1fr 2fr / 1fr 1fr;
+    grid-template-areas:
+      "lifehacks-title lifehacks-title"
+      "lifehacks-top-left lifehacks-top-right"
+      "lifehacks-bottom-left lifehacks-bottom-right"
+      "ad-unit-3 ad-unit-3";
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template: .2fr 1fr 1fr 1fr 1fr 1.2fr / 1fr;
+    grid-template-areas:
+      "lifehacks-title"
+      "lifehacks-top-left"
+      "lifehacks-top-right"
+      "lifehacks-bottom-left"
+      "lifehacks-bottom-right"
+      "ad-unit-3";
+  }
 
   &__title {
     grid-area: lifehacks-title;
@@ -16,21 +47,61 @@
   &__top--left {
     grid-area: lifehacks-top-left;
     position: relative;
+
+    @media screen and (max-width: 991px) {
+      width: 386px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 90vw;
+      height: auto;
+    }
   }
 
   &__top--right {
     grid-area: lifehacks-top-right;
     position: relative;
+
+    @media screen and (max-width: 991px) {
+      width: 386px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 90vw;
+      height: auto;
+    }
   }
 
   &__bottom--left {
     grid-area: lifehacks-bottom-left;
     position: relative;
+
+    @media screen and (max-width: 991px) {
+      width: 386px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 90vw;
+      height: auto;
+    }
   }
 
   &__bottom--right {
     grid-area: lifehacks-bottom-right;
     position: relative;
+
+    @media screen and (max-width: 991px) {
+      width: 386px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 90vw;
+      height: auto;
+    }
   }
 }
 
@@ -41,6 +112,10 @@
 
     font: normal 800 1rem/1.25rem roboto-g;
     text-transform: uppercase;
+
+    @media screen and (max-width: 649px) {
+      font: normal 800 .8rem/1.11rem roboto-g;
+    }
   }
 
   &--title__link {
@@ -58,24 +133,33 @@
   }
 
   &--content {
+    padding: 40px;
+
+    text-align: left;
+    color: $white;
+
     position: absolute;
     left: 0;
     bottom: 0;
-    text-align: left;
-    color: $white;
-    padding: 40px;
+
     z-index: 1;
+
+    @media screen and (max-width: 419px) {
+      padding: 20px;
+    }
   }
 
 
   &::before {
     content: '';
     background-color: $dark;
+
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+
     opacity: .45;
     -webkit-transition: opacity .25s ease;
     -o-transition: opacity .25s ease;
@@ -86,11 +170,13 @@
     content: '';
     background-color: $dark;
     border: 1px solid $white;
+
     position: absolute;
     top: 10px;
     left: 10px;
     right: 10px;
     bottom: 10px;
+
     opacity: 0;
     -webkit-transition: opacity .25s ease;
     -o-transition: opacity .25s ease;
@@ -114,8 +200,8 @@
   margin: 11px auto 0 0;
 
   .fa {
-    font-size: 12px;
     margin-right: 5px;
+    font-size: 12px;
   }
 
   .date {
@@ -129,17 +215,21 @@
   margin-right: 20px;
 
   &--count {
-    font-size: 12px;
     display: inline-block;
+
+    font-size: 12px;
+
     position: relative;
 
     &::before {
+      margin-left: -35px;
+
       content: '';
       font-family: fontawesome;
       font-size: 5px;
-      top: 35%;
-      margin-left: -35px;
+
       position: absolute;
+      top: 35%;
     }
   }
 }

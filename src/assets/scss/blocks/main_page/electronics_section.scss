@@ -7,6 +7,19 @@
     "electronics-top-left electronics-top-left electronics-top-left electronics-top-right electronics-top-right electronics-top-right"
     "electronics-bottom-left electronics-bottom-left electronics-bottom-center electronics-bottom-center electronics-bottom-right electronics-bottom-right";
 
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "electronics-top-left"
+      "electronics-top-right"
+      "electronics-bottom-left"
+      "electronics-bottom-center"
+      "electronics-bottom-right";
+    width: 80vw;
+    grid-gap: 10px 0;
+  }
+
   &__top--left {
     grid-area: electronics-top-left;
     position: relative;

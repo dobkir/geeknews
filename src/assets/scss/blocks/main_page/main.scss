@@ -9,17 +9,32 @@
 
 .main__container {
   display: grid;
-  grid-template-columns: auto $main-width auto;
-  grid-template-rows: 130px 700px 648px 420px 744px 752px 150px;
+  grid-template-columns: $main-width;
+  grid-template-rows: .18fr .93fr .86fr .6fr 1fr 1fr .18fr;
   grid-template-areas:
-    ". ad-unit-1 ."
-    ". electronics ."
-    ". it-news ."
-    "reviews reviews reviews"
-    ". lifehacks ."
-    ". diy ."
-    ". more .";
+    "ad-unit-1"
+    "electronics"
+    "it-news"
+    "reviews"
+    "lifehacks"
+    "diy"
+    "more";
+  justify-items: center;
   align-items: center;
+
+  @media screen and (max-width: 1141px) {
+    grid-template-columns: 991px;
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+  }
+
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 766px;
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: auto;
+  }
 }
 
 .section__title {
@@ -36,17 +51,44 @@
 
 .ad__unit--1 {
   grid-area: ad-unit-1;
+
+  & img {
+    @media screen and (max-width: 991px) {
+      margin: 10px auto;
+      width: 766px;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 80vw;
+      height: 70%;
+    }
+  }
 }
 
 .ad__unit--2 {
   grid-area: ad-unit-2;
   margin-bottom: 25px;
   margin-left: auto;
+
+  @media screen and (max-width: 1141px) {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
 }
 
 .ad__unit--3 {
   grid-area: ad-unit-3;
-
+  width: 334px;
+  height: 668px;
   margin-top: auto;
   margin-left: auto;
+
+  @media screen and (max-width: 1141px) {
+    margin: 10px;
+  }
+
+  @media screen and (max-width: 767px) {
+    height: 548px;
+    width: auto;
+  }
 }
