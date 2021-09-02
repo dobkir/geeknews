@@ -10,4 +10,8 @@
   background-color: $white-1;
 
   text-align: center;
+
+  @media screen and (max-width: 649px) {
+    height: 100px;
+  }
 }
