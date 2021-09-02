@@ -8,8 +8,6 @@
 ![Repository size][repo-size-shield]&nbsp;
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-![Website trailer][product-screenshot]
-
 ### Website preview
 ![Website trailer][product-screenshot-main_page]
 ### Website on mobile devices preview
@@ -39,7 +37,7 @@ The template is based on HandlebarsJS/SCSS. It was created with a task runner Gu
 - Others<br>
 ![HandlebarsJS](https://img.shields.io/badge/HandlebarsJS-24.3%25-f7931e?logo=HandlebarsJS5&logoColor=f7931e&style=for-the-badge)<br>
 ![JavaScript](https://img.shields.io/badge/JavaScript-21.9%25-f1e05a?logo=JavaScript&logoColor=f1e05a&style=for-the-badge)<br>
-![HTML](https://img.shields.io/badge/JavaScript-3.6%25-e34c26?logo=JavaScript&logoColor=e34c26a&style=for-the-badge)
+![HTML](https://img.shields.io/badge/HTML-3.6%25-e34c26?logo=HTML&logoColor=e34c26a&style=for-the-badge)
 
 - Through:<br>
 [![Gulp](https://img.shields.io/badge/Gulp-fa383e?style=for-the-badge&logo=Gulp&logoColor=fff)](https://gulpjs.com/)<br>
